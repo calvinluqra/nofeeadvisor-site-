@@ -25,7 +25,7 @@ export const POST = async (req: NextRequest) => {
 
     // Send email with download links
     await resend.emails.send({
-      from: "No Fee Advisor <<anything>@tiecoreofg.resend.app>",
+      from: "No Fee Advisor <onboarding@resend.dev>",
       to: [process.env.NOTIFICATION_EMAIL!],
       subject: `New Lead – ${name}`,
       html: `
