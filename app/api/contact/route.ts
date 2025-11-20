@@ -29,12 +29,17 @@ export const POST = async (req: NextRequest) => {
       to: ["calvin@partnerwithluqra.com"],
       subject: `New Lead – ${name}`,
       html: `
-        <h2>New submission!</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Files:</strong> ${uploaded.length}</p>
-        <ul>${uploaded.map(u => `<li><a href="${u}">Download ${u.split("/").pop()}</a></li>`).join("")}</ul>
-      `,
+  <h2>New Lead – ${name}</h2>
+  <p><strong>Name:</strong> ${name}</p>
+  <p><strong>Email:</strong> ${email}</p>
+  <p><strong>Phone:</strong> ${phone || "— (not provided)"}</p>
+  <p><strong>Message:</strong><br>${message ? message.replace(/\n/g, "<br>") : "— (no message)"}</p>
+  ${uploaded.length > 0 
+    ? `<p><strong>Files attached (${uploaded.length}):</strong></p><ul>${uploaded.map(u => `<li><a href="${u}">Download ${u.split("/").pop()}</a></li>`).join("")}</ul>` 
+    : "<p><strong>No files attached</strong></p>"
+  }
+  <hr><small>Sent: ${new Date().toLocaleString()}</small>
+`,
     });
 
     console.log("Resend success:", result);
