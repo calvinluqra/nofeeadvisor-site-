@@ -26,7 +26,7 @@ export const POST = async (req: NextRequest) => {
     // Send email
     const result = await resend.emails.send({
       from: "No Fee Advisor <onboarding@resend.dev>",
-      to: [process.env.NOTIFICATION_EMAIL || "calvin@partnerwithluqra.com"],
+      to: ["calvin@partnerwithluqra.com"],
       subject: `New Lead – ${name}`,
       html: `
         <h2>New submission!</h2>
