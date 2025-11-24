@@ -1,4 +1,5 @@
 import UploadForm from "@/components/upload-form";
+import LogoBanner from "@/components/logo-banner";
 
 export default function Home() {
   return (
