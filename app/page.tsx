@@ -17,7 +17,7 @@ export default function Home() {
             No Fee Advisor
           </h2>
           <p className="text-xl md:text-2xl opacity-95 mb-8">
-            I help businesses eliminate or drastically reduce credit-card & merchant processing fees
+            Dozens of payment processors bidding for your business all in one place! Ensure the lowest price with one upload and let the providers compete.
           </p>
         </div>
       </section>
