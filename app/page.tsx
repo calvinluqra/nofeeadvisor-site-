@@ -11,7 +11,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-600 text-white py-28">
+      <section className="bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-600 text-white py-20 md:py-24">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
             No Fee Advisor
