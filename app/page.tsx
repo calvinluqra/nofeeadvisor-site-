@@ -39,6 +39,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <LogoBanner />
 
       {/* CTA + Form */}
       <section className="py-24 bg-gray-50">
