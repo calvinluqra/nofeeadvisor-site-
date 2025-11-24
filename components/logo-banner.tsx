@@ -2,14 +2,14 @@
 
 export default function LogoBanner() {
   const logos = [
-    { name: "First Data", url: "https://upload.wikimedia.org/wikipedia/commons/0/0f/First_Data_2019_logo.svg" },
+    { name: "First Data", url: "https://logos-world.net/wp-content/uploads/2020/09/First-Data-Logo.png" }, // Reliable PNG from Logos World
     { name: "Fiserv", url: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Fiserv_logo.svg" },
-    { name: "TSYS", url: "https://upload.wikimedia.org/wikipedia/commons/8/85/TSYS_logo.svg" },
-    { name: "Authorize.net", url: "https://seeklogo.com/images/A/authorize-net-logo-0A8A8A8A8A-searchlogo.com.png" },
+    { name: "TSYS", url: "https://logos-world.net/wp-content/uploads/2021/02/TSYS-Logo.png" }, // Updated PNG
+    { name: "Authorize.net", url: "https://www.authorize.net/content/dam/authorize/images/authorize-logo-blue.svg" }, // Official SVG
     { name: "NMI Gateway", url: "https://www.nmi.com/wp-content/themes/nmi/images/logo.svg" },
-    { name: "Worldpay", url: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Worldpay_logo.svg" },
+    { name: "Worldpay", url: "https://logos-world.net/wp-content/uploads/2021/03/Worldpay-Logo.png" }, // Reliable PNG
     { name: "Global Payments", url: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Global_Payments_Inc._logo.svg" },
-    { name: "Elavon", url: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Elavon_primary_logo.svg" },
+    { name: "Elavon", url: "https://logos-world.net/wp-content/uploads/2021/02/Elavon-Logo.png" }, // PNG fallback
     { name: "American Express", url: "https://upload.wikimedia.org/wikipedia/commons/0/0b/American_Express_logo.svg" },
     { name: "Visa", url: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" },
     { name: "Mastercard", url: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard-logo.svg" },
@@ -20,7 +20,7 @@ export default function LogoBanner() {
     { name: "Square", url: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Square_Inc._logo.svg" },
     { name: "PayPal", url: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png" },
     { name: "Shopify", url: "https://cdn.worldvectorlogo.com/logos/shopify.svg" },
-    { name: "Clover", url: "https://www.clover.com/assets/images/brand/clover-logo.svg" },
+    { name: "Clover", url: "https://logos-world.net/wp-content/uploads/2020/11/Clover-Logo.png" }, // Reliable PNG
     { name: "Toast", url: "https://upload.wikimedia.org/wikipedia/commons/9/96/Toast_Inc._Logo.svg" },
   ];
 
