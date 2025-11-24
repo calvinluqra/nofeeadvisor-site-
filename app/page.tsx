@@ -26,16 +26,16 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-10">
           <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Slash Fees to 0%</h3>
-            <p className="text-gray-600">Legally reduce processing fees to zero or near-zero — instantly.</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Upload your processing Statement</h3>
+            <p className="text-gray-600">Your costs are analyzed and dozens of processors submit their bid. Ensuring you have the lowest price!</p>
           </div>
           <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Keep 100% Revenue</h3>
-            <p className="text-gray-600">No more losing 2–4% of every sale to banks.</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Receive an offer within 24 Hours!</h3>
+            <p className="text-gray-600">Best pricing offer e-mailed directly to you - no commitments.</p>
           </div>
           <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Solutions</h3>
-            <p className="text-gray-600">Works for any industry — same-day approvals.</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Will not be beat!</h3>
+            <p className="text-gray-600">If you receieve lower pricing anywhere - No Fee Advisor will beat or match!</p>
           </div>
         </div>
       </section>
