@@ -1,3 +1,5 @@
+"use client";
+
 export default function LogoBanner() {
   const logos = [
     { name: "First Data", url: "https://upload.wikimedia.org/wikipedia/commons/0/0f/First_Data_2019_logo.svg" },
