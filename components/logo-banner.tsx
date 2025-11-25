@@ -1,7 +1,5 @@
 "use client";
 
-const VERSION = "v20251125-2";   // ← change this number any time you want to force refresh
-
 export default function LogoBanner() {
   const logos = [
     "https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg",
@@ -19,7 +17,7 @@ export default function LogoBanner() {
     "https://www.clover.com/assets/images/brand/clover-logo.svg",
     "https://upload.wikimedia.org/wikipedia/commons/4/4d/Fiserv_logo.svg",
     "https://www.toasttab.com/hubfs/toast-logo.svg",
-  ].map(url => `${url}?${VERSION}`);
+  ];
 
   return (
     <section className="py-16 bg-gray-100 overflow-hidden">
@@ -41,7 +39,6 @@ export default function LogoBanner() {
           </div>
         </div>
       </div>
-
       <style jsx>{`
         .animate-scroll { animation: scroll 50s linear infinite; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
