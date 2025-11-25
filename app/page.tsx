@@ -42,4 +42,55 @@ export default function Home() {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Slash Fees to 0%</h3>
             <p className="text-gray-600">Legally reduce processing fees to zero or near-zero — instantly.</p>
           </div>
-          <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow
+          <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Keep 100% Revenue</h3>
+            <p className="text-gray-600">No more losing 2–4% of every sale to banks.</p>
+          </div>
+          <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Solutions</h3>
+            <p className="text-gray-600">Works for any industry — same-day approvals.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-gray-600 mb-8 font-medium">
+            Works with all major processors & payment methods
+          </p>
+          <div className="relative overflow-hidden">
+            <div className="flex [animation:scroll_55s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
+              {logos.flatMap((url) => [url, url]).map((url, i) => (
+                <img
+                  key={i}
+                  src={url}
+                  alt=""
+                  className="h-12 w-36 mx-12 object-contain flex-shrink-0 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Get Your Free Fee Analysis
+          </h2>
+          <p className="text-xl text-gray-600 mb-12">
+            Upload your latest statement — I'll show you exactly how much you can save.
+          </p>
+          <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-200">
+            <UploadForm />
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-8 bg-gray-900 text-gray-400 text-center text-sm">
+        <p>&copy; 2025 No Fee Advisor &bull; All rights reserved</p>
+      </footer>
+    </main>
+  );
+}
