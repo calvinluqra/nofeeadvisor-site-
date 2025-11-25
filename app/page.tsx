@@ -40,6 +40,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <LogoBanner />
             {/* Perfect 15-logo banner — no files, no cache, no missing logos */}
       <section className="py-16 bg-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
