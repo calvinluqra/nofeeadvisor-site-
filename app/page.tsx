@@ -51,22 +51,4 @@ export default function Home() {
           </div>
           <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Solutions</h3>
-            <p className="text-gray-600">Works for any industry — same-day approvals.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* LOGO BANNER — pure Tailwind, no styled-jsx */}
-      <section className="py-16 bg-gray-100 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-gray-600 mb-8 font-medium">
-            Works with all major processors & payment methods
-          </p>
-          <div className="relative">
-            <div className="flex animate-[scroll_50s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
-              {logos.flatMap(url => [url, url]).map((url, i) => (
-                <img
-                  key={i}
-                  src={url}
-                  alt="Payment processor"
-                  className="h-12 w-36 mx-12 object-contain flex-shrink-0 opacity-70 grayscale hover:grayscale-
+            <p className
