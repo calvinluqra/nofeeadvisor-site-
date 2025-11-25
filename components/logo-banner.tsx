@@ -39,7 +39,7 @@ export default function LogoBanner() {
                 key={i}
                 src={logo}
                 alt=""
-                className="h-12 w-auto mx-10 flex items-center justify-center opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
+                className="h-12 w-36 mx-10 object-contain object-center flex-shrink-0 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
                 loading="lazy"
               />
             ))}
