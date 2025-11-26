@@ -15,7 +15,7 @@ const logos = [
   "/logos/clover.png",
   "/logos/fiserv-logo.svg.png",
   "/logos/toast-logo.jpg",
-  "/logos/globalpayments-logo.svg"
+  "/logos/globalpayments-logo.svg",
   "/logos/tsys-logo.svg.png",
 ];
 
