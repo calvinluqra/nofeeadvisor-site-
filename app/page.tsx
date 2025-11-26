@@ -35,20 +35,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-100">
+            <section className="py-16 bg-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-gray-600 mb-8 font-medium">
+          <p className="text-center text-gray-900 mb-8 font-medium">
             Works with all major processors & payment methods
           </p>
-          <div className="flex flex-wrap justify-center gap-8">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-12 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard-logo.svg" alt="Mastercard" className="h-12 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/American_Express_logo.svg" alt="Amex" className="h-12 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Apple_Pay_logo.svg" alt="Apple Pay" className="h-12 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Google_Pay_logo.svg" alt="Google Pay" className="h-12 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" className="h-12 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Square_Inc._logo.svg" alt="Square" className="h-12 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png" alt="PayPal" className="h-12 w-auto" />
+          <div className="flex flex-wrap justify-center gap-12 py-4">
+            <img src="/logos/visa.svg" alt="Visa" className="h-12 w-auto" />
+            <img src="/logos/mastercard.svg" alt="Mastercard" className="h-12 w-auto" />
+            <img src="/logos/american-express.svg" alt="Amex" className="h-12 w-auto" />
+            <img src="/logos/apple-pay.svg" alt="Apple Pay" className="h-12 w-auto" />
+            <img src="/logos/google-pay.svg" alt="Google Pay" className="h-12 w-auto" />
+            <img src="/logos/stripe.svg" alt="Stripe" className="h-12 w-auto" />
+            <img src="/logos/square.svg" alt="Square" className="h-12 w-auto" />
+            <img src="/logos/paypal.svg" alt="PayPal" className="h-12 w-auto" />
+            <img src="/logos/authorize-net.png" alt="Authorize.net" className="h-12 w-auto" />
+            <img src="/logos/nmi.png" alt="NMI" className="h-12 w-auto" />
+            <img src="/logos/clover.png" alt="Clover" className="h-12 w-auto" />
+            <img src="/logos/fiserv.png" alt="Fiserv" className="h-12 w-auto" />
+            <img src="/logos/toast.png" alt="Toast" className="h-12 w-auto" />
+            <img src="/logos/shopify.svg" alt="Shopify" className="h-12 w-auto" />
+            <img src="/logos/global-payments.svg" alt="Global Payments" className="h-12 w-auto" />
           </div>
         </div>
       </section>
