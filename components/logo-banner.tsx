@@ -23,20 +23,33 @@ export default function LogoBanner() {
   return (
     <section className="py-16 bg-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-gray-900 mb-10 font-medium">
+        <p className="text-center text-gray-900 mb-10 font-medium text-lg">
           Works with all major processors & payment methods
         </p>
-        <div className="flex flex-wrap justify-center gap-10 md:gap-16">
-          {logos.map((logo) => (
-            <img
-              key={logo}
-              src={logo}
-              alt=""
-              className="h-12 w-auto object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition"
-            />
-          ))}
+
+        <div className="relative">
+          <div className="flex animate-[scroll_60s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
+            {/* Duplicate the list twice for seamless infinite loop */}
+            {[...logos, ...logos].map((logo, i) => (
+              <img
+                key={i}
+                src={logo}
+                alt=""
+                className="h-14 mx-12 object-contain flex-shrink-0 opacity-75 hover:opacity-100 transition-opacity"
+                loading="lazy"
+              />
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Tailwind animation – smooth 60-second infinite scroll */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 }
