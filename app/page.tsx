@@ -1,4 +1,5 @@
 import UploadForm from "@/components/upload-form";
+import LogoBanner from "@/components/logo-banner";
 
 export default function Home() {
   return (
@@ -64,7 +65,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+<LogoBanner />
       <footer className="py-8 bg-gray-900 text-gray-400 text-center text-sm">
         <p>&copy; 2025 No Fee Advisor • All rights reserved</p>
       </footer>
