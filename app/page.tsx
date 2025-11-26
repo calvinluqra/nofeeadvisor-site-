@@ -35,27 +35,18 @@ export default function Home() {
         </div>
       </section>
 
-            <section className="py-16 bg-gray-100 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-gray-900 mb-8 font-medium">
+                  <section className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <p className="text-gray-900 mb-10 font-medium text-lg">
             Works with all major processors & payment methods
           </p>
-          <div className="flex flex-wrap justify-center gap-12 py-4">
-            <img src="/logos/visa.svg" alt="Visa" className="h-12 w-auto" />
-            <img src="/logos/mastercard.svg" alt="Mastercard" className="h-12 w-auto" />
-            <img src="/logos/american-express.svg" alt="Amex" className="h-12 w-auto" />
-            <img src="/logos/apple-pay.svg" alt="Apple Pay" className="h-12 w-auto" />
-            <img src="/logos/google-pay.svg" alt="Google Pay" className="h-12 w-auto" />
-            <img src="/logos/stripe.svg" alt="Stripe" className="h-12 w-auto" />
-            <img src="/logos/square.svg" alt="Square" className="h-12 w-auto" />
-            <img src="/logos/paypal.svg" alt="PayPal" className="h-12 w-auto" />
-            <img src="/logos/authorize-net.png" alt="Authorize.net" className="h-12 w-auto" />
-            <img src="/logos/nmi.png" alt="NMI" className="h-12 w-auto" />
-            <img src="/logos/clover.png" alt="Clover" className="h-12 w-auto" />
-            <img src="/logos/fiserv.png" alt="Fiserv" className="h-12 w-auto" />
-            <img src="/logos/toast.png" alt="Toast" className="h-12 w-auto" />
-            <img src="/logos/shopify.svg" alt="Shopify" className="h-12 w-auto" />
-            <img src="/logos/global-payments.svg" alt="Global Payments" className="h-12 w-auto" />
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+            <img src="/logos/visa.svg" alt="Visa" className="h-10 md:h-12" />
+            <img src="/logos/mastercard.svg" alt="Mastercard" className="h-10 md:h-12" />
+            <img src="/logos/american-express.svg" alt="American Express" className="h-10 md:h-12" />
+            <img src="/logos/stripe.svg" alt="Stripe" className="h-10 md:h-12" />
+            <img src="/logos/square.svg" alt="Square" className="h-10 md:h-12" />
+            <img src="/logos/paypal.svg" alt="PayPal" className="h-10 md:h-12" />
           </div>
         </div>
       </section>
