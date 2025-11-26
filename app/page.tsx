@@ -51,6 +51,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <LogoBanner />
 
       <section className="py-24 bg-white">
         <div className="max-w-2xl mx-auto px-6 text-center">
@@ -65,7 +66,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-<LogoBanner />
       <footer className="py-8 bg-gray-900 text-gray-400 text-center text-sm">
         <p>&copy; 2025 No Fee Advisor • All rights reserved</p>
       </footer>
