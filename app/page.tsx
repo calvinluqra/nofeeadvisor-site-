@@ -2,21 +2,21 @@ import UploadForm from "@/components/upload-form";
 
 export default function Home() {
   const logos = [
-    "https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/5/5e/Mastercard-logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/0/0b/American_Express_logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/f/f4/Apple_Pay_logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/0/05/Google_Pay_logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/9/9f/Square_Inc._logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png",
-    "https://cdn.shopify.com/shopifycloud/checkout-web/assets/1.0.0/en/assets/global.svg",
-    "https://www.authorize.net/content/dam/authorize/images/authorize-logo-blue.svg",
-    "https://www.nmi.com/wp-content/themes/nmi/images/logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/5/5b/Global_Payments_Inc._logo.svg",
-    "https://www.clover.com/assets/images/brand/clover-logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/4/4d/Fiserv_logo.svg",
-    "https://www.toasttab.com/hubfs/toast-logo.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/visa.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/mastercard.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/american-express.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/apple-pay.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/google-pay.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/stripe.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/square.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/paypal.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/shopify.svg",
+    "https://raw.githubusercontent.com/iconpacks/iconpacks/master/credit-cards/svg/authorize-net.svg",
+    "https://raw.githubusercontent.com/iconpacks/iconpacks/master/credit-cards/svg/nmi.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/global-payments.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/clover.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/fiserv.svg",
+    "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/toast.svg",
   ];
 
   return (
