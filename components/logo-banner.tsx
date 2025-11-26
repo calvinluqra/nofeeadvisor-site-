@@ -2,20 +2,21 @@
 
 const logos = [
   "/logos/visa.svg",
-  "/logos/mastercard.svg",
+  "/logos/mastercard-alt.svg",
   "/logos/american-express.svg",
   "/logos/apple-pay.svg",
   "/logos/google-pay.svg",
-  "/logos/stripe.svg",
-  "/logos/square.svg",
+  "/logos/stripe-logo.png",
+  "/logos/square-logo.jpeg",
   "/logos/paypal.svg",
   "/logos/shopify.svg",
-  "/logos/authorize-net.png",
-  "/logos/nmi.png",
+  "/logos/authorize-logo.png",
+  "/logos/nmi-logo.png",
   "/logos/clover.png",
-  "/logos/fiserv.png",
-  "/logos/toast.png",
-  "/logos/global-payments.svg",
+  "/logos/fiserv-logo.svg.png",
+  "/logos/toast-logo.jpg",
+  "/logos/globalpayments-logo.svg"
+  "/logos/tsys-logo.svg.png",
 ];
 
 export default function LogoBanner() {
