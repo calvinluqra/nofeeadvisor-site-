@@ -18,7 +18,6 @@ const logos = [
   "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/fiserv.svg",
   "https://raw.githubusercontent.com/datatrans/payment-logos/master/svg/toast.svg",
 ];
-
   return (
     <main className="min-h-screen bg-gray-50">
       <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b border-gray-200">
