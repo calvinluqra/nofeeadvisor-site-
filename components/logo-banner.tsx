@@ -30,7 +30,7 @@ export default function LogoBanner() {
       </p>
 
       <div className="relative">
-        <div className="flex animate-[scroll_10s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
+        <div className="flex animate-[scroll_60s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
           {/* This line now uses the full current logos array – works for any number */}
           {[...logos, ...logos].map((logo, i) => (
             <img
