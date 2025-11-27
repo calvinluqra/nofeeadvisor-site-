@@ -23,35 +23,33 @@ const logos = [
 
 export default function LogoBanner() {
   return (
-    <section className="py-16 bg-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-gray-900 mb-10 font-medium text-lg">
-          Works with all major processors & payment methods
-        </p>
+  <section className="py-16 bg-gray-100 overflow-hidden">
+    <div className="max-w-7xl mx-auto px-6">
+      <p className="text-center text-gray-900 mb-10 font-medium text-lg">
+        Works with all major processors & payment methods
+      </p>
 
-        <div className="relative">
-          <div className="flex animate-[scroll_10s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
-            {/* Duplicate the list twice for seamless infinite loop */}
-            {[...logos, ...logos].map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt=""
-                className="h-14 mx-12 object-contain flex-shrink-0 opacity-75 hover:opacity-100 transition-opacity"
-                loading="lazy"
-              />
-            ))}
-          </div>
+      <div className="relative">
+        <div className="flex animate-[scroll_60s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
+          {/* This line now uses the full current logos array – works for any number */}
+          {[...logos, ...logos].map((logo, i) => (
+            <img
+              key={i}
+              src={logo}
+              alt=""
+              className="h-14 mx-12 object-contain flex-shrink-0 opacity-75 hover:opacity-100 transition-opacity"
+              loading="lazy"
+            />
+          ))}
         </div>
       </div>
+    </div>
 
-      {/* Tailwind animation – smooth 60-second infinite scroll */}
-      <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
-    </section>
-  );
-}
+    <style jsx>{`
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    `}</style>
+  </section>
+);
