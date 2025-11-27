@@ -28,7 +28,7 @@ export default function LogoBanner() {
         </p>
 
         <div className="relative">
-          <div className="flex animate-[scroll_45s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
+          <div className="flex animate-[scroll_35s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
             {/* Duplicate the list twice for seamless infinite loop */}
             {[...logos, ...logos].map((logo, i) => (
               <img
