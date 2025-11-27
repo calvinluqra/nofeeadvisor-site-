@@ -14,10 +14,10 @@ const logos = [
   "/logos/authorizenet-logo.png",
   "/logos/nmi-logo.png",
   "/logos/clover-logo.png",
-  "/logos/fiserv-logo.svg.png",
+  "/logos/fiserv-logo.png",
   "/logos/globalpayments-logo.svg",
-  "/logos/tsys-logo.svg.png",
-  "/logos/firstdata-logo.jpg",
+  "/logos/tsys-logo.png",
+  "/logos/firstdata-logo.png",
 ];
 
 export default function LogoBanner() {
