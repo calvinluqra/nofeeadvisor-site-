@@ -10,7 +10,7 @@ const logos = [
   "/logos/square-logo.jpeg",
   "/logos/paypal.svg",
   "/logos/shopify-logo.png",
-  "/logos/authorize-logo.png",
+  "/logos/authorizenet-logo.png",
   "/logos/nmi-logo.png",
   "/logos/clover-logo.png",
   "/logos/fiserv-logo.svg.png",
