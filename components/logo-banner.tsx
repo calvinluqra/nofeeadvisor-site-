@@ -15,7 +15,6 @@ const logos = [
   "/logos/nmi-logo.png",
   "/logos/clover-logo.png",
   "/logos/fiserv-logo.svg.png",
-  "/logos/toast-logo.jpg",
   "/logos/globalpayments-logo.svg",
   "/logos/tsys-logo.svg.png",
   "/logos/firstdata-logo.jpg",
