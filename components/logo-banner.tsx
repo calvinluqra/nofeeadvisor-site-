@@ -10,6 +10,7 @@ const logos = [
   "/logos/square-logo.jpeg",
   "/logos/paypal.svg",
   "/logos/shopify-logo.png",
+  "/logos/toast-logo.jpg",
   "/logos/authorizenet-logo.png",
   "/logos/nmi-logo.png",
   "/logos/clover-logo.png",
@@ -17,6 +18,7 @@ const logos = [
   "/logos/toast-logo.jpg",
   "/logos/globalpayments-logo.svg",
   "/logos/tsys-logo.svg.png",
+  "/logos/firstdata-logo.jpg",
 ];
 
 export default function LogoBanner() {
