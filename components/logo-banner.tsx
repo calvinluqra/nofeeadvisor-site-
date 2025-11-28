@@ -12,7 +12,7 @@ const logos = [
   "/logos/shopify-logo.png",
   "/logos/toast-logo.jpg",
   "/logos/authorizenet-logo.png",
-  "/logos/nmi-logo.png",
+  "/logos/nmi-logo-v2.png",
   "/logos/clover-logo.png",
   "/logos/fiserv-logo.png",
   "/logos/globalpayments-logo.svg",
