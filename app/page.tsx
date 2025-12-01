@@ -68,14 +68,14 @@ export default function Home() {
         <p className="text-3xl font-black text-green-600 mb-2">$19,200</p>
         <p className="text-lg italic mb-4">saved per year</p>
         <p className="font-medium">“Got 4 bids in 24 hours and switched the next day.”</p>
-        <p class="mt-4 text-gray-600">— Sarah L., E-commerce Store, California</p>
+        <p className="mt-4 text-gray-600">— Sarah L., E-commerce Store, California</p>
       </div>
 
       <div className="bg-white p-8 rounded-2xl shadow-lg">
         <p className="text-3xl font-black text-green-600 mb-2">$62,000</p>
         <p className="text-lg italic mb-4">saved per year</p>
         <p className="font-medium">“Thought zero fees were impossible until we tried this.”</p>
-        <p class="mt-4 text-gray-600">— Dr. Patel, Dental Group, Texas</p>
+        <p className="mt-4 text-gray-600">— Dr. Patel, Dental Group, Texas</p>
       </div>
     </div>
   </div>
