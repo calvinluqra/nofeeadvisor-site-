@@ -68,7 +68,7 @@ export default function Home() {
               <p className="text-xl italic mb-4">saved per year</p>
               <p className="font-medium">— Marco R., Chicago Italian Restaurant</p>
               <div className="mt-6">
-                <img src="/statements/marco-before-after.jpg" alt="Marco statement" className="w-full rounded-lg shadow-md cursor-pointer" onClick={() => openModal("stmt1")} />
+                <img src="/statements/marcotest.jpeg" alt="Marco statement" className="w-full rounded-lg shadow-md cursor-pointer" onClick={() => openModal("stmt1")} />
               </div>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-xl">
