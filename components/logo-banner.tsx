@@ -9,6 +9,7 @@ const logos = [
   "/logos/paypal.svg",
   "/logos/stripe-logo.png",
   "/logos/square-logo.jpeg",
+  "/logos/clover-new.png",
 ];
 
 export default function LogoBanner() {
