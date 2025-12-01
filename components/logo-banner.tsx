@@ -30,19 +30,20 @@ export default function LogoBanner() {
           Works with all major processors & payment methods
         </p>
 
-        <div className="relative">
-          <div className="flex animate-marquee gap-16">
-            {[...logos, ...logos].map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt=""
-                className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-                loading="lazy"
-              />
-            ))}
-          </div>
-        </div>
+        <div className="relative overflow-hidden">
+  <div className="flex animate-[scroll_60s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
+    {[...logos, ...logos].map((logo, i) => (
+      <div key={i} className="flex-shrink-0 w-48 h-14 flex items-center justify-center mx-4">
+        <img
+          src={logo}
+          alt=""
+          className="h-12 max-w-full object-contain opacity-75 hover:opacity-100 transition-opacity"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+</div>
       </div>
 
       <style jsx>{`
