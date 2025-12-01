@@ -10,8 +10,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white py-24 md:py-32">
+            <section className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white py-24 md:py-32">
         <div className="max-w-5xl mx-auto text-center px-6">
           <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
             Stop Losing Thousands<br />to Credit Card Fees
@@ -20,10 +19,113 @@ export default function Home() {
             Upload your merchant statement → get competing bids from top processors → 
             keep <span className="text-yellow-300 font-bold">100% of your revenue</span>
           </p>
+
           <div className="text-6xl md:text-8xl font-black text-yellow-300 mb-10">
             Most merchants save $8,400 – $47,000 per year
           </div>
+
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-3xl mx-auto -mt-4">
             <UploadForm />
           </div>
-          <div className
+
+          <div className="mt-8 text-lg md:text-xl font-medium">
+            Free analysis • No obligation • Results in 24–48 hours
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+          <div className="p-10 rounded-lg shadow-md text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Slash Fees to 0%</h3>
+            <p className="text-gray-600">Legally reduce processing fees to zero or near-zero — instantly.</p>
+          </div>
+          <div className="p-10 rounded-lg shadow-md text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Keep 100% Revenue</h3>
+            <p className="text-gray-600">No more losing 2–4% of every sale to banks.</p>
+          </div>
+          <div className="p-10 rounded-lg shadow-md text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Solutions</h3>
+            <p className="text-gray-600">Works for any industry — same-day approvals.</p>
+          </div>
+        </div>
+      </section>
+      <LogoBanner />
+
+      <section className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-4xl md:text-5xl font-black text-center mb-16">
+      Real Merchants, Real Savings
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-10">
+      {/* Testimonial 1 */}
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="p-8 text-center">
+          <p className="text-4xl font-black text-green-600 mb-2">$38,400</p>
+          <p className="text-xl italic mb-6">saved per year</p>
+          <p className="font-medium">— Marco R., Chicago Italian Restaurant</p>
+        </div>
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
+          <img 
+            src="/statements/marco-before-after.jpg" 
+            alt="Before and after processing statement showing $38,400 saved" 
+            className="w-full rounded-lg shadow-md"
+          />
+        </div>
+      </div>
+
+      {/* Testimonial 2 */}
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="p-8 text-center">
+          <p className="text-4xl font-black text-green-600 mb-2">$19,200</p>
+          <p className="text-xl italic mb-6">saved per year</p>
+          <p className="font-medium">— Sarah L., California E-commerce</p>
+        </div>
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
+          <img 
+            src="/statements/sarah-before-after.jpg" 
+            alt="Before and after statement showing $19,200 saved" 
+            className="w-full rounded-lg shadow-md"
+          />
+        </div>
+      </div>
+
+      {/* Testimonial 3 */}
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="p-8 text-center">
+          <p className="text-4xl font-black text-green-600 mb-2">$62,000</p>
+          <p className="text-xl italic mb-6">saved per year</p>
+          <p className="font-medium">— Dr. Patel, Texas Dental Group</p>
+        </div>
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
+          <img 
+            src="/statements/patel-before-after.jpg" 
+            alt="Before and after statement showing $62,000 saved" 
+            className="w-full rounded-lg shadow-md"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section className="py-24 bg-white">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+  Ready to Stop Overpaying?
+</h2>
+<p className="text-xl text-gray-600 mb-12">
+  Upload your statement now — most merchants hear back with bids in under 24 hours.
+</p>
+          <div className="bg-gray-50 rounded-lg shadow-md p-10 border">
+            <UploadForm />
+          </div>
+        </div>
+      </section>
+      <footer className="py-8 bg-gray-900 text-gray-400 text-center text-sm">
+        <p>&copy; 2025 No Fee Advisor • All rights reserved</p>
+      </footer>
+    </main>
+  );
+}
