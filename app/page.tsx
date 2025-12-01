@@ -66,13 +66,12 @@ export default function Home() {
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Marco R., Chicago Italian Restaurant</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
-          <img 
-            src="/statements/marco-before-after.jpg" 
-            alt="Before and after processing statement showing $38,400 saved" 
-            className="w-full rounded-lg shadow-md"
-          />
-        </div>
+        <div 
+  className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+  onClick={() => document.getElementById('stmt1')?.showModal?.()}
+>
+  <img src="/statements/marco-before-after.jpg" alt="Saved $38,400" className="w-full rounded-lg shadow-md" />
+</div>
       </div>
 
       {/* Testimonial 2 */}
@@ -82,13 +81,12 @@ export default function Home() {
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Sarah L., California E-commerce</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
-          <img 
-            src="/statements/sarah-before-after.jpg" 
-            alt="Before and after statement showing $19,200 saved" 
-            className="w-full rounded-lg shadow-md"
-          />
-        </div>
+        <div 
+  className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+  onClick={() => document.getElementById('stmt2')?.showModal?.()}
+>
+  <img src="/statements/sarah-before-after.jpg" alt="Saved $19,200" className="w-full rounded-lg shadow-md" />
+</div>
       </div>
 
       {/* Testimonial 3 */}
@@ -98,13 +96,12 @@ export default function Home() {
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Dr. Patel, Texas Dental Group</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
-          <img 
-            src="/statements/patel-before-after.jpg" 
-            alt="Before and after statement showing $62,000 saved" 
-            className="w-full rounded-lg shadow-md"
-          />
-        </div>
+        <div 
+  className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+  onClick={() => document.getElementById('stmt3')?.showModal?.()}
+>
+  <img src="/statements/patel-before-after.jpg" alt="Saved $62,000" className="w-full rounded-lg shadow-md" />
+</div>
       </div>
     </div>
   </div>
@@ -126,6 +123,9 @@ export default function Home() {
       <footer className="py-8 bg-gray-900 text-gray-400 text-center text-sm">
         <p>&copy; 2025 No Fee Advisor • All rights reserved</p>
       </footer>
+      <dialog id="stmt1" className="p-0 bg-transparent"><form method="dialog" className="text-right pr-4 pt-4"><button className="text-white text-5xl">×</button></form><img src="/statements/marco-before-after.jpg" className="w-full max-w-4xl"/></dialog>
+<dialog id="stmt2" className="p-0 bg-transparent"><form method="dialog" className="text-right pr-4 pt-4"><button className="text-white text-5xl">×</button></form><img src="/statements/sarah-before-after.jpg" className="w-full max-w-4xl"/></dialog>
+<dialog id="stmt3" className="p-0 bg-transparent"><form method="dialog" className="text-right pr-4 pt-4"><button className="text-white text-5xl">×</button></form><img src="/statements/patel-before-after.jpg" className="w-full max-w-4xl"/></dialog>
     </main>
   );
 }
