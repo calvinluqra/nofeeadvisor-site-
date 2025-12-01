@@ -56,11 +56,11 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Get Your Free Fee Analysis
-          </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Upload your latest statement — I'll show you exactly how much you can save.
-          </p>
+  Ready to Stop Overpaying?
+</h2>
+<p className="text-xl text-gray-600 mb-12">
+  Upload your statement now — most merchants hear back with bids in under 24 hours.
+</p>
           <div className="bg-gray-50 rounded-lg shadow-md p-10 border">
             <UploadForm />
           </div>
