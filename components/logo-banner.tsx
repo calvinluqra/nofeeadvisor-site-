@@ -13,6 +13,8 @@ const logos = [
   "/logos/toast-logo.jpg",
   "/logos/nmi-v3.png",
   "/logos/authorizenet-logo.png",
+  "/logos/qb-logo.png",
+  "/logos/netsuite-logo.png",
   "/logos/firstdata-logo.png",
   "/logos/elavon-logo.png",
   "/logos/globalpayments-logo.svg",
