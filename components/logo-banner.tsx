@@ -31,28 +31,35 @@ export default function LogoBanner() {
         </p>
 
         <div className="relative overflow-hidden">
-  <div className="flex animate-[scroll_60s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
-    {[...logos, ...logos].map((logo, i) => (
-      <div key={i} className="flex-shrink-0 w-48 h-14 flex items-center justify-center mx-4">
-        <img
-          src={logo}
-          alt=""
-          className="h-12 max-w-full object-contain opacity-75 hover:opacity-100 transition-opacity"
-          loading="lazy"
-        />
-      </div>
-    ))}
-  </div>
-</div>
+          <div className="flex animate-marquee whitespace-nowrap">
+            {[...logos, ...logos].map((logo, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-48 flex items-center justify-center px-8"
+              >
+                <img
+                  src={logo}
+                  alt=""
+                  className="h-11 max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <style jsx>{`
         @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
         }
         .animate-marquee {
-          animation: marquee 60s linear infinite;
+          animation: marquee 70s linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
