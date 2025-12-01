@@ -35,4 +35,90 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-10">
           <div className="p-10 rounded-lg shadow-md text-center">
-            <h3 className="text-
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Slash Fees to 0%</h3>
+            <p className="text-gray-600">Legally reduce processing fees to zero or near-zero — instantly.</p>
+          </div>
+          <div className="p-10 rounded-lg shadow-md text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Keep 100% Revenue</h3>
+            <p className="text-gray-600">No more losing 2–4% of every sale to banks.</p>
+          </div>
+          <div className="p-10 rounded-lg shadow-md text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Solutions</h3>
+            <p className="text-gray-600">Works for any industry — same-day approvals.</p>
+          </div>
+        </div>
+      </section>
+
+      <LogoBanner />
+
+      {/* TESTIMONIALS */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-black mb-16">Real Merchants, Real Savings</h2>
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="bg-white p-8 rounded-2xl shadow-xl">
+              <p className="text-4xl font-black text-green-600 mb-2">$38,400</p>
+              <p className="text-xl italic mb-4">saved per year</p>
+              <p className="font-medium">— Marco R., Chicago Italian Restaurant</p>
+              <div className="mt-6">
+                <img src="/statements/marco-before-after.jpg" alt="Marco's statement" className="w-full rounded-lg shadow-md cursor-pointer" onClick={() => document.getElementById('stmt1')?.showModal()} />
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-xl">
+              <p className="text-4xl font-black text-green-600 mb-2">$19,200</p>
+              <p className="text-xl italic mb-4">saved per year</p>
+              <p className="font-medium">— Sarah L., California E-commerce</p>
+              <div className="mt-6">
+                <img src="/statements/sarah-before-after.jpg" alt="Sarah's statement" className="w-full rounded-lg shadow-md cursor-pointer" onClick={() => document.getElementById('stmt2')?.showModal()} />
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-xl">
+              <p className="text-4xl font-black text-green-600 mb-2">$62,000</p>
+              <p className="text-xl italic mb-4">saved per year</p>
+              <p className="font-medium">— Dr. Patel, Texas Dental Group</p>
+              <div className="mt-6">
+                <img src="/statements/patel-before-after.jpg" alt="Patel's statement" className="w-full rounded-lg shadow-md cursor-pointer" onClick={() => document.getElementById('stmt3')?.showModal()} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Stop Overpaying?</h2>
+          <p className="text-xl text-gray-600 mb-12">
+            Upload your statement now — most merchants hear back with bids in under 24 hours.
+          </p>
+          <div className="bg-gray-50 rounded-lg shadow-md p-10 border">
+            <UploadForm />
+          </div>
+        </div>
+      </section>
+
+      {/* ZOOM MODALS */}
+      <dialog id="stmt1" className="p-0 bg-black/90 max-w-5xl rounded-xl">
+        <form method="dialog">
+          <button className="float-right text-white text-6xl pr-6 pt-4">×</button>
+        </form>
+        <img src="/statements/marco-before-after.jpg" className="w-full rounded-xl" />
+      </dialog>
+      <dialog id="stmt2" className="p-0 bg-black/90 max-w-5xl rounded-xl">
+        <form method="dialog">
+          <button className="float-right text-white text-6xl pr-6 pt-4">×</button>
+        </form>
+        <img src="/statements/sarah-before-after.jpg" className="w-full rounded-xl" />
+      </dialog>
+      <dialog id="stmt3" className="p-0 bg-black/90 max-w-5xl rounded-xl">
+        <form method="dialog">
+          <button className="float-right text-white text-6xl pr-6 pt-4">×</button>
+        </form>
+        <img src="/statements/patel-before-after.jpg" className="w-full rounded-xl" />
+      </dialog>
+
+      <footer className="py-8 bg-gray-900 text-gray-400 text-center text-sm">
+        <p>© 2025 No Fee Advisor • All rights reserved</p>
+      </footer>
+    </main>
+  );
+}
