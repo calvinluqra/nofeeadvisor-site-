@@ -13,11 +13,6 @@ const logos = [
   "/logos/toast-logo.jpg",
   "/logos/authorizenet-logo.png",
   "/logos/nmi-v3.png",
-  "/logos/clover-logo.png",
-  "/logos/fiserv-logo.png",
-  "/logos/globalpayments-logo.svg",
-  "/logos/tsys-logo.png",
-  "/logos/firstdata-logo.png",
 ];
 
 export default function LogoBanner() {
