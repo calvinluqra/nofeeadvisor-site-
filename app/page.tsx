@@ -51,31 +51,58 @@ export default function Home() {
         </div>
       </section>
       <section className="py-20 bg-gray-50">
-  <div className="max-w-5xl mx-auto px-6 text-center">
-    <h2 className="text-4xl md:text-5xl font-black mb-12">
-      Merchants Already Saving Real Money
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-4xl md:text-5xl font-black text-center mb-16">
+      Real Merchants, Real Savings
     </h2>
 
-    <div className="grid md:grid-cols-3 gap-8">
-      <div className="bg-white p-8 rounded-2xl shadow-lg">
-        <p className="text-3xl font-black text-green-600 mb-2">$38,400</p>
-        <p className="text-lg italic mb-4">saved per year</p>
-        <p className="font-medium">“Went from 3.7% to 0.0% fees. Best decision we ever made.”</p>
-        <p className="mt-4 text-gray-600">— Marco R., Italian Restaurant, Chicago</p>
+    <div className="grid md:grid-cols-3 gap-10">
+      {/* Testimonial 1 */}
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="p-8 text-center">
+          <p className="text-4xl font-black text-green-600 mb-2">$38,400</p>
+          <p className="text-xl italic mb-6">saved per year</p>
+          <p className="font-medium">— Marco R., Chicago Italian Restaurant</p>
+        </div>
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
+          <img 
+            src="/statements/marco-before-after.jpg" 
+            alt="Before and after processing statement showing $38,400 saved" 
+            className="w-full rounded-lg shadow-md"
+          />
+        </div>
       </div>
 
-      <div className="bg-white p-8 rounded-2xl shadow-lg">
-        <p className="text-3xl font-black text-green-600 mb-2">$19,200</p>
-        <p className="text-lg italic mb-4">saved per year</p>
-        <p className="font-medium">“Got 4 bids in 24 hours and switched the next day.”</p>
-        <p className="mt-4 text-gray-600">— Sarah L., E-commerce Store, California</p>
+      {/* Testimonial 2 */}
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="p-8 text-center">
+          <p className="text-4xl font-black text-green-600 mb-2">$19,200</p>
+          <p className="text-xl italic mb-6">saved per year</p>
+          <p className="font-medium">— Sarah L., California E-commerce</p>
+        </div>
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
+          <img 
+            src="/statements/sarah-before-after.jpg" 
+            alt="Before and after statement showing $19,200 saved" 
+            className="w-full rounded-lg shadow-md"
+          />
+        </div>
       </div>
 
-      <div className="bg-white p-8 rounded-2xl shadow-lg">
-        <p className="text-3xl font-black text-green-600 mb-2">$62,000</p>
-        <p className="text-lg italic mb-4">saved per year</p>
-        <p className="font-medium">“Thought zero fees were impossible until we tried this.”</p>
-        <p className="mt-4 text-gray-600">— Dr. Patel, Dental Group, Texas</p>
+      {/* Testimonial 3 */}
+      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="p-8 text-center">
+          <p className="text-4xl font-black text-green-600 mb-2">$62,000</p>
+          <p className="text-xl italic mb-6">saved per year</p>
+          <p className="font-medium">— Dr. Patel, Texas Dental Group</p>
+        </div>
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
+          <img 
+            src="/statements/patel-before-after.jpg" 
+            alt="Before and after statement showing $62,000 saved" 
+            className="w-full rounded-lg shadow-md"
+          />
+        </div>
       </div>
     </div>
   </div>
