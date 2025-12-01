@@ -101,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* ZOOM MODALS */}
-      <dialog id="stmt1" className="p-0 bg-black/90 max-w-5xl rounded-xl"><form method="dialog"><button className="float-right text-white text-6xl pr-6 pt-4">×</button></form><img src="/statements/marco-before-after.jpg" className="w-full rounded-xl"/></dialog>
+      <dialog id="stmt1" className="p-0 bg-black/90 max-w-5xl rounded-xl"><form method="dialog"><button className="float-right text-white text-6xl pr-6 pt-4">×</button></form><img src="/statements/marcotest.jpeg" className="w-full rounded-xl"/></dialog>
       <dialog id="stmt2" className="p-0 bg-black/90 max-w-5xl rounded-xl"><form method="dialog"><button className="float-right text-white text-6xl pr-6 pt-4">×</button></form><img src="/statements/sarah-before-after.jpg" className="w-full rounded-xl"/></dialog>
       <dialog id="stmt3" className="p-0 bg-black/90 max-w-5xl rounded-xl"><form method="dialog"><button className="float-right text-white text-6xl pr-6 pt-4">×</button></form><img src="/statements/patel-before-after.jpg" className="w-full rounded-xl"/></dialog>
 
