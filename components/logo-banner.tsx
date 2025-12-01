@@ -30,17 +30,32 @@ export default function LogoBanner() {
           Works with all major processors & payment methods
         </p>
 
-        <div className="relative overflow-hidden">
-          <div className="flex animate-marquee whitespace-nowrap">
-            {[...logos, ...logos].map((logo, i) => (
+        {/* Two identical tracks for seamless loop */}
+        <div className="relative">
+          <div className="flex animate-marquee">
+            {logos.map((logo, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 w-48 flex items-center justify-center px-8"
+                className="flex-shrink-0 w-56 flex items-center justify-center px-10"
               >
                 <img
                   src={logo}
                   alt=""
-                  className="h-11 max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  className="h-12 max-w-full object-contain opacity-70 hover:opacity-100 transition"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+            {/* Duplicate the exact same set again */}
+            {logos.map((logo, i) => (
+              <div
+                key={`dup-${i}`}
+                className="flex-shrink-0 w-56 flex items-center justify-center px-10"
+              >
+                <img
+                  src={logo}
+                  alt=""
+                  className="h-12 max-w-full object-contain opacity-70 hover:opacity-100 transition"
                   loading="lazy"
                 />
               </div>
@@ -49,17 +64,18 @@ export default function LogoBanner() {
         </div>
       </div>
 
+      {/* Pure CSS animation — nothing Vercel can strip */}
       <style jsx>{`
         @keyframes marquee {
-          from {
+          0% {
             transform: translateX(0);
           }
-          to {
+          100% {
             transform: translateX(-50%);
           }
         }
         .animate-marquee {
-          animation: marquee 70s linear infinite;
+          animation: marquee 80s linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
