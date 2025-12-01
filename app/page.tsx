@@ -66,8 +66,13 @@ export default function Home() {
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Marco R., Chicago Italian Restaurant</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
-             onClick={() => document.getElementById('modal-1')?.showModal()}>
+        <div 
+          className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+          onClick={() => {
+            const modal = document.getElementById('modal-1') as HTMLDialogElement;
+            modal?.showModal();
+          }}
+        >
           <img 
             src="/statements/marco-before-after.jpg"
             alt="Before/after statement – $38,400 saved"
@@ -76,53 +81,72 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Repeat the same pattern for the other two */}
+      {/* Testimonial 2 */}
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
         <div className="p-8 text-center">
           <p className="text-4xl font-black text-green-600 mb-2">$19,200</p>
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Sarah L., California E-commerce</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
-             onClick={() => document.getElementById('modal-2')?.showModal()}>
+        <div 
+          className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+          onClick={() => {
+            const modal = document.getElementById('modal-2') as HTMLDialogElement;
+            modal?.showModal();
+          }}
+        >
           <img src="/statements/sarah-before-after.jpg" alt="Before/after – $19,200 saved" className="w-full rounded-lg shadow-md hover:shadow-xl transition" />
         </div>
       </div>
 
+      {/* Testimonial 3 */}
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
         <div className="p-8 text-center">
           <p className="text-4xl font-black text-green-600 mb-2">$62,000</p>
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Dr. Patel, Texas Dental Group</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
-             onClick={() => document.getElementById('modal-3')?.showModal()}>
+        <div 
+          className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+          onClick={() => {
+            const modal = document.getElementById('modal-3') as HTMLDialogElement;
+            modal?.showModal();
+          }}
+        >
           <img src="/statements/patel-before-after.jpg" alt="Before/after – $62,000 saved" className="w-full rounded-lg shadow-md hover:shadow-xl transition" />
         </div>
       </div>
     </div>
   </div>
 
-  {/* Lightbox modals — one for each image */}
-  <dialog id="modal-1" className="p-0 bg-transparent max-w-4xl">
-    <div className="text-right mb-4">
-      <button onClick={() => document.getElementById('modal-1')?.close()} className="text-white text-4xl">✕</button>
+  {/* Lightbox modals */}
+  <dialog id="modal-1" className="p-0 bg-black/80 backdrop:bg-black/80 max-w-5xl">
+    <div className="text-right p-4">
+      <button 
+        onClick={() => (document.getElementById('modal-1') as HTMLDialogElement)?.close()}
+        className="text-white text-4xl hover:text-gray-300"
+      >
+        ✕
+      </button>
     </div>
-    <img src="/statements/marco-before-after.jpg" className="w-full rounded-xl shadow-2xl" />
+    <img src="/statements/marco-before-after.jpg" className="w-full rounded-xl" />
   </dialog>
-  <dialog id="modal-2" className="p-0 bg-transparent max-w-4xl">
-    <div className="text-right mb-4">
-      <button onClick={() => document.getElementById('modal-2')?.close()} className="text-white text-4xl">✕</button>
+
+  <dialog id="modal-2" className="p-0 bg-black/80 backdrop:bg-black/80 max-w-5xl">
+    <div className="text-right p-4">
+      <button 
+        onClick={() => (document.getElementById('modal-2') as HTMLDialogElement)?.close()}
+        className="text-white text-4xl hover:text-gray-300"
+      >
+        ✕
+      </button>
     </div>
-    <img src="/statements/sarah-before-after.jpg" className="w-full rounded-xl shadow-2xl" />
+    <img src="/statements/sarah-before-after.jpg" className="w-full rounded-xl" />
   </dialog>
-  <dialog id="modal-3" className="p-0 bg-transparent max-w-4xl">
-    <div className="text-right mb-4">
-      <button onClick={() => document.getElementById('modal-3')?.close()} className="text-white text-4xl">✕</button>
-    </div>
-    <img src="/statements/patel-before-after.jpg" className="w-full rounded-xl shadow-2xl" />
-  </dialog>
-</section>
+
+  <dialog id="modal-3" className="p-0 bg-black/80 backdrop:bg-black/80 max-w-5xl">
+    <div className="text-right p-4">
+      <button 
 
       <section className="py-24 bg-white">
         <div className="max-w-2xl mx-auto px-6 text-center">
