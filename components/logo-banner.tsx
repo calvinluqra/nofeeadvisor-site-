@@ -1,5 +1,7 @@
 "use client";
 
+import Marquee from "react-fast-marquee";
+
 const logos = [
   "/logos/visa.svg",
   "/logos/mastercard-alt.svg",
@@ -24,63 +26,24 @@ const logos = [
 
 export default function LogoBanner() {
   return (
-    <section className="py-16 bg-gray-50 overflow-hidden">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center text-gray-700 mb-10 font-medium">
           Works with all major processors & payment methods
         </p>
 
-        {/* Two identical tracks for seamless loop */}
-        <div className="relative">
-          <div className="flex animate-marquee">
-            {logos.map((logo, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-56 flex items-center justify-center px-10"
-              >
-                <img
-                  src={logo}
-                  alt=""
-                  className="h-12 max-w-full object-contain opacity-70 hover:opacity-100 transition"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-            {/* Duplicate the exact same set again */}
-            {logos.map((logo, i) => (
-              <div
-                key={`dup-${i}`}
-                className="flex-shrink-0 w-56 flex items-center justify-center px-10"
-              >
-                <img
-                  src={logo}
-                  alt=""
-                  className="h-12 max-w-full object-contain opacity-70 hover:opacity-100 transition"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <Marquee speed={45} pauseOnHover gradient={false}>
+          {logos.map((logo, i) => (
+            <img
+              key={i}
+              src={logo}
+              alt=""
+              className="h-12 mx-10 object-contain opacity-70 hover:opacity-100 transition"
+              loading="lazy"
+            />
+          ))}
+        </Marquee>
       </div>
-
-      {/* Pure CSS animation — nothing Vercel can strip */}
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 80s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }
