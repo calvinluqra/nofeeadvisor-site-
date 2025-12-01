@@ -24,23 +24,39 @@ const logos = [
 
 export default function LogoBanner() {
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-gray-900 mb-10 font-medium text-lg">
+        <p className="text-center text-gray-700 mb-10 font-medium">
           Works with all major processors & payment methods
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-          {logos.map((logo, i) => (
-            <img
-              key={i}
-              src={logo}
-              alt=""
-              className="h-14 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity"
-              loading="lazy"
-            />
-          ))}
+
+        <div className="relative">
+          <div className="flex animate-marquee gap-16">
+            {[...logos, ...logos].map((logo, i) => (
+              <img
+                key={i}
+                src={logo}
+                alt=""
+                className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
+              />
+            ))}
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 60s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }
