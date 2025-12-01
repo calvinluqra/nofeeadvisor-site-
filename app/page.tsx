@@ -66,48 +66,62 @@ export default function Home() {
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Marco R., Chicago Italian Restaurant</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+             onClick={() => document.getElementById('modal-1')?.showModal()}>
           <img 
-            src="/statements/marco-before-after.jpg" 
-            alt="Before and after processing statement showing $38,400 saved" 
-            className="w-full rounded-lg shadow-md"
+            src="/statements/marco-before-after.jpg"
+            alt="Before/after statement – $38,400 saved"
+            className="w-full rounded-lg shadow-md hover:shadow-xl transition"
           />
         </div>
       </div>
 
-      {/* Testimonial 2 */}
+      {/* Repeat the same pattern for the other two */}
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
         <div className="p-8 text-center">
           <p className="text-4xl font-black text-green-600 mb-2">$19,200</p>
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Sarah L., California E-commerce</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
-          <img 
-            src="/statements/sarah-before-after.jpg" 
-            alt="Before and after statement showing $19,200 saved" 
-            className="w-full rounded-lg shadow-md"
-          />
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+             onClick={() => document.getElementById('modal-2')?.showModal()}>
+          <img src="/statements/sarah-before-after.jpg" alt="Before/after – $19,200 saved" className="w-full rounded-lg shadow-md hover:shadow-xl transition" />
         </div>
       </div>
 
-      {/* Testimonial 3 */}
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
         <div className="p-8 text-center">
           <p className="text-4xl font-black text-green-600 mb-2">$62,000</p>
           <p className="text-xl italic mb-6">saved per year</p>
           <p className="font-medium">— Dr. Patel, Texas Dental Group</p>
         </div>
-        <div className="bg-gray-100 p-6 border-t-4 border-green-500">
-          <img 
-            src="/statements/patel-before-after.jpg" 
-            alt="Before and after statement showing $62,000 saved" 
-            className="w-full rounded-lg shadow-md"
-          />
+        <div className="bg-gray-100 p-6 border-t-4 border-green-500 cursor-pointer"
+             onClick={() => document.getElementById('modal-3')?.showModal()}>
+          <img src="/statements/patel-before-after.jpg" alt="Before/after – $62,000 saved" className="w-full rounded-lg shadow-md hover:shadow-xl transition" />
         </div>
       </div>
     </div>
   </div>
+
+  {/* Lightbox modals — one for each image */}
+  <dialog id="modal-1" className="p-0 bg-transparent max-w-4xl">
+    <div className="text-right mb-4">
+      <button onClick={() => document.getElementById('modal-1')?.close()} className="text-white text-4xl">✕</button>
+    </div>
+    <img src="/statements/marco-before-after.jpg" className="w-full rounded-xl shadow-2xl" />
+  </dialog>
+  <dialog id="modal-2" className="p-0 bg-transparent max-w-4xl">
+    <div className="text-right mb-4">
+      <button onClick={() => document.getElementById('modal-2')?.close()} className="text-white text-4xl">✕</button>
+    </div>
+    <img src="/statements/sarah-before-after.jpg" className="w-full rounded-xl shadow-2xl" />
+  </dialog>
+  <dialog id="modal-3" className="p-0 bg-transparent max-w-4xl">
+    <div className="text-right mb-4">
+      <button onClick={() => document.getElementById('modal-3')?.close()} className="text-white text-4xl">✕</button>
+    </div>
+    <img src="/statements/patel-before-after.jpg" className="w-full rounded-xl shadow-2xl" />
+  </dialog>
 </section>
 
       <section className="py-24 bg-white">
