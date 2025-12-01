@@ -23,28 +23,33 @@ export default function LogoBanner() {
         Works with all major processors & payment methods
       </p>
 
-      <div className="relative">
-        <div className="flex animate-[scroll_30s_linear_infinite] hover:[animation-play-state:paused] whitespace-nowrap">
-          {/* This line now uses the full current logos array – works for any number */}
-          {[...logos, ...logos].map((logo, i) => (
-            <img
-              key={i}
-              src={logo}
-              alt=""
-              className="h-14 mx-12 object-contain flex-shrink-0 opacity-75 hover:opacity-100 transition-opacity"
-              loading="lazy"
-            />
-          ))}
-        </div>
-      </div>
-    </div>
+      <div className="relative overflow-hidden">
+  <div className="logo-marquee">
+    {[...logos, ...logos].map((logo, i) => (
+      <img
+        key={i}
+        src={logo}
+        alt=""
+        className="h-14 mx-12 object-contain flex-shrink-0 opacity-75 hover:opacity-100 transition-opacity"
+        loading="lazy"
+      />
+    ))}
+  </div>
+</div>
 
-    <style jsx>{`
-      @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-    `}</style>
+<style jsx>{`
+  .logo-marquee {
+    display: flex;
+    animation: scroll 80s linear infinite;
+  }
+  .logo-marquee:hover {
+    animation-play-state: paused;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+`}</style>
   </section>
 );
 }
