@@ -22,7 +22,7 @@ export default function Home() {
           <div className="text-6xl md:text-8xl font-black text-yellow-300 mb-10">
             Most merchants save $8,400 – $47,000 per year
           </div>
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-3xl mx-auto -mt-4">
+          <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-3xl mx-auto -mt-4">
             <UploadForm />
           </div>
           <div className="mt-8 text-lg md:text-xl font-medium">
@@ -46,45 +46,4 @@ export default function Home() {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Solutions</h3>
             <p className="text-gray-600">Works for any industry — same-day approvals.</p>
           </div>
-        </div>
-      </section>
-
-      <LogoBanner />
-
-      {/* TESTIMONIALS WITH CLICK-TO-ZOOM (FIXED) */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-16">Real Merchants, Real Savings</h2>
-          <div className="grid md:grid-cols-3 gap-10">
-
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <p className="text-4xl font-black text-green-600 mb-2">$38,400</p>
-              <p className="text-xl italic mb-4">saved per year</p>
-              <p className="font-medium">— Marco R., Chicago Italian Restaurant</p>
-              <div className="mt-6">
-                <img 
-                  src="/statements/marco-before-after.jpg" 
-                  alt="Marco's statement" 
-                  className="w-full rounded-lg shadow-md cursor-pointer" 
-                  onClick={() => (document.getElementById('stmt1') as any)?.showModal()} 
-                />
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <p className="text-4xl font-black text-green-600 mb-2">$19,200</p>
-              <p className="text-xl italic mb-4">saved per year</p>
-              <p className="font-medium">— Sarah L., California E-commerce</p>
-              <div className="mt-6">
-                <img 
-                  src="/statements/sarah-before-after.jpg" 
-                  alt="Sarah's statement" 
-                  className="w-full rounded-lg shadow-md cursor-pointer" 
-                  onClick={() => (document.getElementById('stmt2') as any)?.showModal()} 
-                />
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <p className="text-4xl font-black text-green-600 mb-2">$62,000</p>
-             
+       
