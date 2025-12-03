@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </section>
       
-                  {/* REAL-TIME SAVINGS CALCULATOR */}
+                        {/* REAL-TIME SAVINGS CALCULATOR — FIXED OVERFLOW */}
       <section className="py-24 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-4">
@@ -43,54 +43,49 @@ export default function Home() {
             Enter your monthly processing volume below
           </p>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-3xl mx-auto">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto overflow-hidden">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Input */}
-              <div>
+              {/* Input Side */}
+              <div className="text-center md:text-left">
                 <label className="block text-2xl font-bold text-gray-800 mb-6">
                   Monthly Credit Card Volume
                 </label>
-                <div className="flex items-center justify-center gap-3">
+                <div className="flex items-center justify-center md:justify-start gap-3">
                   <span className="text-4xl font-black text-indigo-600">$</span>
                   <input
-  type="text"
-  inputMode="numeric"
-  pattern="[0-9]*"
-  defaultValue="50,000"
-  id="volume-input"
-  className="text-6xl font-black text-center w-full border-b-4 border-indigo-600 focus:outline-none focus:border-purple-600 transition-all duration-200 bg-transparent"
-  placeholder="50,000"
-  onInput={(e) => {
-    const input = e.target as HTMLInputElement;
-    let value = input.value.replace(/[^0-9]/g, ""); // strip non-digits
-    if (value === "") value = "0";
+                    type="text"
+                    inputMode="numeric"
+                    defaultValue="50,000"
+                    id="volume-input"
+                    className="text-4xl md:text-5xl lg:text-6xl font-black text-center md:text-left w-full max-w-xs border-b-4 border-indigo-600 focus:outline-none focus:border-purple-600 transition-all bg-transparent"
+                    placeholder="50,000"
+                    onInput={(e) => {
+                      const input = e.target as HTMLInputElement;
+                      let value = input.value.replace(/[^0-9]/g, "");
+                      if (value === "") value = "0";
 
-    // Add commas
-    const formatted = Number(value).toLocaleString();
-    input.value = formatted;
+                      const formatted = Number(value).toLocaleString();
+                      input.value = formatted;
 
-    // Calculate savings
-    const volume = Number(value) || 0;
-    const yearlyLoss = Math.round(volume * 12 * 0.029);
-    const resultEl = document.getElementById("savings-result");
-    if (resultEl) {
-      resultEl.textContent = yearlyLoss.toLocaleString();
-    }
-  }}
-/>
+                      const volume = Number(value) || 0;
+                      const yearlyLoss = Math.round(volume * 12 * 0.029);
+                      const resultEl = document.getElementById("savings-result");
+                      if (resultEl) resultEl.textContent = yearlyLoss.toLocaleString();
+                    }}
+                  />
                 </div>
                 <p className="text-gray-500 mt-4 text-lg">per month</p>
               </div>
 
-              {/* Live Result */}
-              <div className="text-left md:text-right">
-                <p className="text-2xl font-bold text-gray-700 mb-2">
+              {/* Result Side */}
+              <div className="text-center md:text-right">
+                <p className="text-xl md:text-2xl font-bold text-gray-700 mb-2">
                   You’re losing approximately
                 </p>
-                <p className="text-6xl md:text-7xl font-black text-red-600">
+                <p className="text-5xl md:text-6xl lg:text-7xl font-black text-red-600 break-all leading-tight">
                   $<span id="savings-result">17,400</span>
                 </p>
-                <p className="text-2xl font-bold text-gray-700 mt-2">per year</p>
+                <p className="text-2xl font-bold text-gray-700 mt-4">per year</p>
                 <p className="text-lg text-gray-600 mt-6 font-medium">
                   Upload your statement and keep <span className="text-green-600 font-black">100% of it</span>
                 </p>
@@ -101,24 +96,6 @@ export default function Home() {
           <p className="mt-12 text-lg text-gray-600">
             Most merchants save <span className="font-black text-green-600">$8,400 – $47,000/year</span>
           </p>
-        </div>
-      </section>
-
-      {/* BENEFITS */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-          <div className="p-10 rounded-lg shadow-md text-center">
-            <h3 className="text-2xl font-bold mb-4">Slash Fees to 0%</h3>
-            <p className="text-gray-600">Legally reduce fees to zero or near-zero.</p>
-          </div>
-          <div className="p-10 rounded-lg shadow-md text-center">
-            <h3 className="text-2xl font-bold mb-4">Keep 100% Revenue</h3>
-            <p className="text-gray-600">No more losing 2–4% per sale.</p>
-          </div>
-          <div className="p-10 rounded-lg shadow-md text-center">
-            <h3 className="text-2xl font-bold mb-4">Custom Solutions</h3>
-            <p className="text-gray-600">Works for any industry.</p>
-          </div>
         </div>
       </section>
 
