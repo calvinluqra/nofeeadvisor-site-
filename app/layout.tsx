@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+<head>
+  <title>No Fee Advisor – Stop Overpaying Credit Card Fees</title>
+  <meta name="description" content="Upload your statement → get zero-fee bids in 24 hours. Most merchants save $8,400–$47,000/year. Free analysis." />
+  <meta property="og:title" content="No Fee Advisor – Keep 100% of Your Revenue" />
+  <meta property="og:description" content="Free analysis • Zero obligation • Most merchants save $8,400–$47,000/year" />
+  <meta property="og:image" content="https://nofeeadvisor-site.vercel.app/og-image.jpg" />
+  <meta property="og:url" content="https://nofeeadvisor-site.vercel.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+
 export const metadata: Metadata = {
   title: "No Fee Advisor",
   description: "Stop overpaying on payment processing, insurance, cell phone bills, and more.",
