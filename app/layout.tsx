@@ -23,8 +23,8 @@ export default function RootLayout({
 
             <div className="relative group">
               <button className="text-lg font-medium flex items-center gap-2 hover:text-indigo-600 transition">
-                Explore Savings
-              </button>
+  More Savings Opportunities ▼
+</button>
 
               <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <a href="/" className="block px-6 py-4 hover:bg-indigo-50 font-medium text-indigo-600">
