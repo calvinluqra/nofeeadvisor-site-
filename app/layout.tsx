@@ -17,9 +17,14 @@ export default function RootLayout({
         {/* SHARED HEADER — appears on every page */}
         <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" className="text-2xl font-black hover:text-indigo-600 transition">
-              No Fee Advisor
-            </a>
+<a href="/" className="flex items-center gap-3 hover:opacity-80 transition">
+  <img 
+    src="/logo.png" 
+    alt="No Fee Advisor" 
+    className="h-10 w-auto" 
+  />
+  <span className="text-2xl font-black text-gray-900">No Fee Advisor</span>
+</a>
 
             <div className="relative group">
               <button className="text-lg font-medium flex items-center gap-2 hover:text-indigo-600 transition">
