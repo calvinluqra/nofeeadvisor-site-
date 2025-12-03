@@ -53,21 +53,31 @@ export default function Home() {
                 <div className="flex items-center justify-center gap-3">
                   <span className="text-4xl font-black text-indigo-600">$</span>
                   <input
-                    type="number"
-                    defaultValue="50000"
-                    id="volume-input"
-                    className="text-6xl font-black text-center w-full border-b-4 border-indigo-600 focus:outline-none focus:border-purple-600 transition-all duration-200 bg-transparent"
-                    placeholder="50000"
-                    onInput={(e) => {
-                      const input = e.target as HTMLInputElement;
-                      const volume = Number(input.value) || 0;
-                      const yearlyLoss = Math.round(volume * 12 * 0.029); // ~2.9% average overpay
-                      const resultEl = document.getElementById("savings-result");
-                      if (resultEl) {
-                        resultEl.textContent = yearlyLoss.toLocaleString();
-                      }
-                    }}
-                  />
+  type="text"
+  inputMode="numeric"
+  pattern="[0-9]*"
+  defaultValue="50,000"
+  id="volume-input"
+  className="text-6xl font-black text-center w-full border-b-4 border-indigo-600 focus:outline-none focus:border-purple-600 transition-all duration-200 bg-transparent"
+  placeholder="50,000"
+  onInput={(e) => {
+    const input = e.target as HTMLInputElement;
+    let value = input.value.replace(/[^0-9]/g, ""); // strip non-digits
+    if (value === "") value = "0";
+
+    // Add commas
+    const formatted = Number(value).toLocaleString();
+    input.value = formatted;
+
+    // Calculate savings
+    const volume = Number(value) || 0;
+    const yearlyLoss = Math.round(volume * 12 * 0.029);
+    const resultEl = document.getElementById("savings-result");
+    if (resultEl) {
+      resultEl.textContent = yearlyLoss.toLocaleString();
+    }
+  }}
+/>
                 </div>
                 <p className="text-gray-500 mt-4 text-lg">per month</p>
               </div>
