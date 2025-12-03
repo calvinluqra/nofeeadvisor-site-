@@ -32,6 +32,42 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+            {/* SAVINGS CALCULATOR */}
+      <section className="py-20 bg-gradient-to-r from-indigo-50 to-purple-50">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-black mb-8">
+            See Your Exact Savings in 8 Seconds
+          </h2>
+          <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-2xl mx-auto">
+            <label className="block text-xl font-semibold mb-6 text-gray-700">
+              Your average monthly credit card volume:
+            </label>
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <span className="text-3xl font-bold text-indigo-600">$</span>
+              <input
+                type="number"
+                defaultValue="50000"
+                className="text-5xl font-black text-center w-64 border-b-4 border-indigo-600 focus:outline-none focus:border-purple-600 transition"
+                id="volume-input"
+              />
+            </div>
+            <button
+              onClick={() => {
+                const volume = Number((document.getElementById("volume-input") as HTMLInputElement).value);
+                const savings = Math.round(volume * 12 * 0.028); // ~2.8% average overpay
+                alert(`You’re losing approximately $${savings.toLocaleString()} per year.\n\nUpload your statement now and keep 100% of it.`);
+              }}
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xl font-bold py-5 px-12 rounded-full hover:shadow-2xl transform hover:scale-105 transition"
+            >
+              Show Me My Savings →
+            </button>
+            <p className="mt-6 text-gray-600">
+              Most merchants save <span className="font-black text-green-600">$8,400 – $47,000/year</span>
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* BENEFITS */}
       <section className="py-20 bg-white">
