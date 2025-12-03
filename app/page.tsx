@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </section>
       
-      {/* FINAL CALCULATOR — PERFECT FONT SIZES, ALWAYS READABLE */}
+      {/* FINAL CALCULATOR — ZERO BLEEDING, ANY NUMBER */}
       <section className="py-24 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-4">
@@ -43,8 +43,8 @@ export default function Home() {
             Enter your monthly processing volume below
           </p>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto overflow-hidden">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Input */}
               <div className="text-center md:text-left">
                 <label className="block text-2xl font-bold text-gray-800 mb-6">
@@ -64,7 +64,6 @@ export default function Home() {
                       let value = input.value.replace(/[^0-9]/g, "");
                       if (value === "") value = "0";
                       const numValue = Number(value);
-
                       input.value = numValue.toLocaleString();
 
                       const yearlyLoss = Math.round(numValue * 12 * 0.029);
@@ -74,15 +73,15 @@ export default function Home() {
                       if (resultEl && containerEl) {
                         resultEl.textContent = yearlyLoss.toLocaleString();
 
-                        // Smart, beautiful font scaling — never too big, never cut off
-                        if (yearlyLoss >= 10000000) {          // $10M+
-                          containerEl.className = "text-5xl md:text-6xl font-black text-red-600";
-                        } else if (yearlyLoss >= 1000000) {     // $1M – $9.9M
-                          containerEl.className = "text-5xl md:text-6xl lg:text-7xl font-black text-red-600";
-                        } else if (yearlyLoss >= 100000) {      // $100k – $999k
-                          containerEl.className = "text-6xl md:text-7xl lg:text-8xl font-black text-red-600";
-                        } else {                                // Under $100k
-                          containerEl.className = "text-7xl md:text-8xl lg:text-8xl font-black text-red-600";
+                        // FINAL FONT SCALING — never bleeds at any amount
+                        if (yearlyLoss >= 10000000) {           // $10M+
+                          containerEl.className = "text-5xl md:text-6xl font-black text-red-600 leading-none";
+                        } else if (yearlyLoss >= 1000000) {      // $1M – $9.9M
+                          containerEl.className = "text-5xl md:text-6xl lg:text-7xl font-black text-red-600 leading-none";
+                        } else if (yearlyLoss >= 100000) {       // $100k – $999k
+                          containerEl.className = "text-6xl md:text-7xl lg:text-8xl font-black text-red-600 leading-none";
+                        } else {                                 // Under $100k
+                          containerEl.className = "text-7xl md:text-8xl font-black text-red-600 leading-none";
                         }
                       }
                     }}
@@ -91,12 +90,12 @@ export default function Home() {
                 <p className="text-gray-500 mt-4 text-lg">per month</p>
               </div>
 
-              {/* Result — always perfectly readable */}
+              {/* Result — GUARANTEED to stay inside */}
               <div className="text-center md:text-right">
                 <p className="text-xl md:text-2xl font-bold text-gray-700 mb-3">
                   You’re losing approximately
                 </p>
-                <div id="result-container" className="text-7xl md:text-8xl lg:text-8xl font-black text-red-600 leading-tight">
+                <div id="result-container" className="text-7xl md:text-8xl font-black text-red-600 leading-none min-w-0">
                   $<span id="savings-result">17,400</span>
                 </div>
                 <p className="text-2xl font-bold text-gray-700 mt-4">per year</p>
