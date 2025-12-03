@@ -55,18 +55,20 @@ export default function RootLayout({
 
         <div className="min-h-screen">{children}</div>
 
-        <footer className="bg-gray-900 text-gray-400 py-12 text-center text-sm">
-          <p>© 2025 No Fee Advisor • All rights reserved</p>
-        {/* AGENT / PROCESSOR CALL-TO-ACTION IN FOOTER */}
-        <div className="border-t border-gray-800 pt-8 mt-12">
-          <p className="text-center text-gray-400 text-sm">
-            Are you a payment processor, ISO, or agent?
-            <a href="https://forms.gle/your-google-form-link-here" target="_blank" rel="noopener" className="text-indigo-400 hover:text-indigo-300 font-medium ml-2 underline">
-              Join our network → get qualified merchant leads daily
-            </a>
-          </p>
-        </div>
-      </footer>
+        {/* SHARED FOOTER — now compact and beautiful */}
+        <footer className="bg-gray-900 text-gray-400 py-10 text-center text-sm">
+          <p className="mb-4">© 2025 No Fee Advisor • All rights reserved</p>
+
+          {/* AGENT / PROCESSOR CALL-TO-ACTION — tight spacing */}
+          <div className="border-t border-gray-800 pt-6">
+            <p className="text-gray-400 text-sm">
+              Are you a payment processor, ISO, or agent?
+              <a href="https://forms.gle/your-google-form-link-here" target="_blank" rel="noopener" className="text-indigo-400 hover:text-indigo-300 font-medium ml-2 underline">
+                Join our network → get qualified merchant leads daily
+              </a>
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );
