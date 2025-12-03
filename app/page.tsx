@@ -33,39 +33,64 @@ export default function Home() {
         </div>
       </section>
       
-            {/* SAVINGS CALCULATOR */}
-      <section className="py-20 bg-gradient-to-r from-indigo-50 to-purple-50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-8">
-            See Your Exact Savings in 8 Seconds
+                  {/* REAL-TIME SAVINGS CALCULATOR */}
+      <section className="py-24 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-4">
+            See Your Savings <span className="text-indigo-600">Instantly</span>
           </h2>
-          <div className="bg-white rounded-3xl shadow-2xl p-10 max-w-2xl mx-auto">
-            <label className="block text-xl font-semibold mb-6 text-gray-700">
-              Your average monthly credit card volume:
-            </label>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <span className="text-3xl font-bold text-indigo-600">$</span>
-              <input
-                type="number"
-                defaultValue="50000"
-                className="text-5xl font-black text-center w-64 border-b-4 border-indigo-600 focus:outline-none focus:border-purple-600 transition"
-                id="volume-input"
-              />
+          <p className="text-xl text-gray-700 mb-12">
+            Enter your monthly processing volume below
+          </p>
+
+          <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Input */}
+              <div>
+                <label className="block text-2xl font-bold text-gray-800 mb-6">
+                  Monthly Credit Card Volume
+                </label>
+                <div className="flex items-center justify-center gap-3">
+                  <span className="text-4xl font-black text-indigo-600">$</span>
+                  <input
+                    type="number"
+                    defaultValue="50000"
+                    id="volume-input"
+                    className="text-6xl font-black text-center w-full border-b-4 border-indigo-600 focus:outline-none focus:border-purple-600 transition-all duration-200 bg-transparent"
+                    placeholder="50000"
+                    onInput={(e) => {
+                      const input = e.target as HTMLInputElement;
+                      const volume = Number(input.value) || 0;
+                      const yearlyLoss = Math.round(volume * 12 * 0.029); // ~2.9% average overpay
+                      const resultEl = document.getElementById("savings-result");
+                      if (resultEl) {
+                        resultEl.textContent = yearlyLoss.toLocaleString();
+                      }
+                    }}
+                  />
+                </div>
+                <p className="text-gray-500 mt-4 text-lg">per month</p>
+              </div>
+
+              {/* Live Result */}
+              <div className="text-left md:text-right">
+                <p className="text-2xl font-bold text-gray-700 mb-2">
+                  You’re losing approximately
+                </p>
+                <p className="text-6xl md:text-7xl font-black text-red-600">
+                  $<span id="savings-result">17,400</span>
+                </p>
+                <p className="text-2xl font-bold text-gray-700 mt-2">per year</p>
+                <p className="text-lg text-gray-600 mt-6 font-medium">
+                  Upload your statement and keep <span className="text-green-600 font-black">100% of it</span>
+                </p>
+              </div>
             </div>
-            <button
-              onClick={() => {
-                const volume = Number((document.getElementById("volume-input") as HTMLInputElement).value);
-                const savings = Math.round(volume * 12 * 0.028); // ~2.8% average overpay
-                alert(`You’re losing approximately $${savings.toLocaleString()} per year.\n\nUpload your statement now and keep 100% of it.`);
-              }}
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xl font-bold py-5 px-12 rounded-full hover:shadow-2xl transform hover:scale-105 transition"
-            >
-              Show Me My Savings →
-            </button>
-            <p className="mt-6 text-gray-600">
-              Most merchants save <span className="font-black text-green-600">$8,400 – $47,000/year</span>
-            </p>
           </div>
+
+          <p className="mt-12 text-lg text-gray-600">
+            Most merchants save <span className="font-black text-green-600">$8,400 – $47,000/year</span>
+          </p>
         </div>
       </section>
 
