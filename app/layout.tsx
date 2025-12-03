@@ -19,7 +19,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 <a href="/" className="flex items-center gap-3 hover:opacity-80 transition">
   <img 
-    src="/logo.png" 
+    src="/logo.jpg" 
     alt="No Fee Advisor" 
     className="h-10 w-auto" 
   />
