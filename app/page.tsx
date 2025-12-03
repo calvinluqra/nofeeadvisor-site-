@@ -27,7 +27,7 @@ export default function Home() {
         <a href="/insurance" className="block px-6 py-4 hover:bg-gray-50">
           Insurance (home • auto • health • life) → coming soon
         </a>
-        <a href="/cell-phone" className="block px-6 py-4 hover:bg-gray-50">
+        <a href="/cellphone" className="block px-6 py-4 hover:bg-gray-50">
           Cell Phone & Internet Bills → coming soon
         </a>
       </div>
