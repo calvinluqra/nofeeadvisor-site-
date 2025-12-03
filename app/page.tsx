@@ -100,9 +100,6 @@ export default function Home() {
       <dialog id="stmt2" className="p-0 bg-black/90 max-w-5xl rounded-xl"><form method="dialog"><button className="float-right text-white text-6xl pr-6 pt-4">×</button></form><img src="/statements/sarah-before-after.jpg" className="w-full rounded-xl"/></dialog>
       <dialog id="stmt3" className="p-0 bg-black/90 max-w-5xl rounded-xl"><form method="dialog"><button className="float-right text-white text-6xl pr-6 pt-4">×</button></form><img src="/statements/patel-before-after.jpg" className="w-full rounded-xl"/></dialog>
 
-      <footer className="py-8 bg-gray-900 text-gray-400 text-center text-sm">
-        <p>© 2025 No Fee Advisor • All rights reserved</p>
-      </footer>
     </main>
   );
 }
