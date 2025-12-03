@@ -12,10 +12,28 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <h1 className="text-2xl font-bold text-gray-900">No Fee Advisor</h1>
-        </div>
-      </header>
+  <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 className="text-2xl font-bold text-gray-900">No Fee Advisor</h1>
+    
+    <div className="relative group">
+      <button className="text-lg font-medium flex items-center gap-2 hover:text-indigo-600 transition">
+        Explore Savings ▼
+      </button>
+      
+      <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <a href="/" className="block px-6 py-4 hover:bg-indigo-50 font-medium text-indigo-600">
+          Payment Processing ← live now
+        </a>
+        <a href="/insurance" className="block px-6 py-4 hover:bg-gray-50">
+          Insurance (home • auto • health • life) → coming soon
+        </a>
+        <a href="/cell-phone" className="block px-6 py-4 hover:bg-gray-50">
+          Cell Phone & Internet Bills → coming soon
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
 
       {/* HERO */}
       <section className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white py-24 md:py-32">
