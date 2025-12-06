@@ -7,26 +7,44 @@ export default function UploadForm() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatus("Sending…");
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+  const formData = new FormData(e.currentTarget);
+  const files = formData.getAll("files") as File[];
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (res.ok) {
-      setStatus("✅ Sent! Check your email.");
-      (e.target as HTMLFormElement).reset();
-    } else {
-      setStatus("❌ Error — try again.");
+  // BLOCK BAD / FAKE / DANGEROUS FILES
+  for (const file of files) {
+    if (file.size === 0) {
+      setStatus("Empty file detected — please remove it");
+      return;
     }
-    setLoading(false);
-  };
+    if (file.size > 10 * 1024 * 1024) {
+      setStatus("File too large (max 10 MB): " + file.name);
+      return;
+    }
+    if (!file.type.match(/pdf|word|jpg|jpeg|png|webp/i) && !file.name.match(/\.(pdf|docx?|jpe?g|png|webp)$/i)) {
+      setStatus("Invalid file type: " + file.name);
+      return;
+    }
+  }
+
+  setLoading(true);
+  setStatus("Sending…");
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    body: formData,
+  });
+
+  if (res.ok) {
+    setStatus("Sent! Check your email.");
+    (e.target as HTMLFormElement).reset();
+  } else {
+    setStatus("Error — try again.");
+  }
+  setLoading(false);
+};
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
