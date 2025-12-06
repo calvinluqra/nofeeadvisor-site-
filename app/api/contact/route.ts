@@ -8,7 +8,7 @@ export const POST = async (req: NextRequest) => {
   try {
     const formData = await req.formData();
 
-    // === TURNSTILE VERIFICATION ===
+    // Turnstile verification
     const turnstileToken = formData.get("cf-turnstile-response") as string;
     if (turnstileToken) {
       const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
@@ -25,7 +25,7 @@ export const POST = async (req: NextRequest) => {
       }
     }
 
-    // === YOUR EXISTING CODE (unchanged) ===
+    // Your original code
     const name = formData.get("name")?.toString() || "Anonymous";
     const email = formData.get("email")?.toString() || "";
     const phone = formData.get("phone")?.toString() || "";
@@ -60,4 +60,6 @@ export const POST = async (req: NextRequest) => {
     return Response.json({ success: true });
   } catch (error) {
     console.error("Contact API error:", error);
-    return Response.json({ error: "
+    return Response.json({ error: "Something went wrong" }, { status: 500 });
+  }
+};
