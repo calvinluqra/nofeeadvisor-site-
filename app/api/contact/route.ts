@@ -14,6 +14,23 @@ export const POST = async (req: NextRequest) => {
     const message = formData.get("message")?.toString() || "";
     const files = formData.getAll("files") as File[];
 
+    // Verify Turnstile
+const turnstileToken = formData.get("cf-turnstile-response");
+if (turnstileToken) {
+  const verify = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    body: JSON.stringify({
+      secret: process.env.TURNSTILE_SECRET_KEY,
+      response: turnstileToken,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+  const result = await verify.json();
+  if (!result.success) {
+    return new Response("Bot detected", { status: 400 });
+  }
+}
+
     // Upload files to Vercel Blob
     const uploaded: string[] = [];
     for (const file of files) {
