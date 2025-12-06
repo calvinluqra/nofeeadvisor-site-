@@ -2,52 +2,44 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import Turnstile from "react-turnstile";
 
 export default function UploadForm() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  const formData = new FormData(e.currentTarget);
-  const files = formData.getAll("files") as File[];
-
-  // BLOCK BAD / FAKE / DANGEROUS FILES
-  for (const file of files) {
-    if (file.size === 0) {
-      setStatus("Empty file detected — please remove it");
+    if (!turnstileToken) {
+      setStatus("Please complete the security check");
       return;
     }
-    if (file.size > 10 * 1024 * 1024) {
-      setStatus("File too large (max 10 MB): " + file.name);
-      return;
+
+    setLoading(true);
+    setStatus("Sending…");
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("cf-turnstile-response", turnstileToken);
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (res.ok) {
+      setStatus("✅ Sent! Check your email.");
+      (e.target as HTMLFormElement).reset();
+      setTurnstileToken(null);
+    } else {
+      setStatus("❌ Error — try again.");
     }
-    if (!file.type.match(/pdf|word|jpg|jpeg|png|webp/i) && !file.name.match(/\.(pdf|docx?|jpe?g|png|webp)$/i)) {
-      setStatus("Invalid file type: " + file.name);
-      return;
-    }
-  }
-
-  setLoading(true);
-  setStatus("Sending…");
-
-  const res = await fetch("/api/contact", {
-    method: "POST",
-    body: formData,
-  });
-
-  if (res.ok) {
-    setStatus("Sent! Check your email.");
-    (e.target as HTMLFormElement).reset();
-  } else {
-    setStatus("Error — try again.");
-  }
-  setLoading(false);
-};
+    setLoading(false);
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y g-6">
       <input name="name" placeholder="Full Name *" required className="w-full px-4 py-3 border rounded-lg" />
       <input name="email" type="email" placeholder="Email *" required className="w-full px-4 py-3 border rounded-lg" />
       <input name="phone" placeholder="Phone (optional)" className="w-full px-4 py-3 border rounded-lg" />
@@ -58,19 +50,30 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           type="file"
           name="files"
           multiple
-          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp"
+          accept=".pdf,.jpg,.jpeg,.png"
           className="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700"
         />
-        <p className="mt-2 text-xs text-gray-500">PDF, DOCX, images — up to 25 MB total</p>
+        <p className="mt-2 text-xs text-gray-500">PDF, JPG, PNG — up to 25 MB total</p>
+      </div>
+
+      {/* TURNSITLE — INVISIBLE */}
+      <div className="flex justify-center my-6">
+        <Turnstile
+          sitekey="0x4AAAAAACFJ9Ypa9e5m-Qii"   // ← replace with your real key
+          onVerify={(token) => setTurnstileToken(token)}
+          onError={() => setStatus("Security check failed — try again")}
+          onExpire={() => setTurnstileToken(null)}
+        />
       </div>
 
       <button
-        disabled={loading}
-        className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold flex items-center justify-center gap-2 disabled:opacity-70"
+        disabled={loading || !turnstileToken}
+        className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold flex items-center justify-center gap-2 disabled:opacity-50"
       >
         {loading && <Loader2 className="animate-spin" />}
-        Send Message & Files
+        Send Statement
       </button>
+
       {status && <p className="text-center font-medium">{status}</p>}
     </form>
   );
