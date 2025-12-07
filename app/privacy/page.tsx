@@ -43,6 +43,7 @@ export default function PrivacyPolicy() {
             <li>Phone number</li>
             <li>Company name (if applicable)</li>
             <li>Any additional information you choose to include in your message</li>
+  <li>Any additional information included in uploaded documents and files</li>
           </ul>
             </div>
             <div>
