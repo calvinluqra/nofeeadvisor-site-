@@ -55,6 +55,17 @@ export default function UploadForm() {
         />
         <p className="mt-2 text-xs text-gray-500">PDF, JPG, PNG — up to 25 MB total</p>
       </div>
+            <div className="mt-6 space-y-3 text-center">
+        <p className="text-sm text-gray-600 flex items-center justify-center gap-2">
+          <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
+          </svg>
+          Your statements are encrypted and automatically deleted after 30 days
+        </p>
+        <p className="text-sm text-gray-500">
+          Zero spam • We only email you your custom bids • Unsubscribe any time
+        </p>
+      </div>
 
       {/* TURNSITLE — INVISIBLE */}
       <div className="flex justify-center my-6">
