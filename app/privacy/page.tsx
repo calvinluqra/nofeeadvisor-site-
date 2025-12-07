@@ -35,7 +35,7 @@ export default function PrivacyPolicy() {
           <div className="space-y-6">
             <div>
               <h3 className="font-semibold text-lg">A. Contact / Lead forms on our website</h3>
-              <ul className="list-disc pl-8 mt-2"><li>Name, email, phone, company, message</li></ul>
+              <ul className="list-disc pl-8 mt-2"><li>Name, email, phone, company, message, information in uploaded files</li></ul>
             </div>
             <div>
               <h3 className="font-semibold text-lg">B. Agent Network Sign-up Form (Tally.so)</h3>
@@ -43,10 +43,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc pl-8 mt-2 space-y-1">
                 <li>Full name</li>
                 <li>Business email and phone</li>
-                <li>Real estate license number and state</li>
-                <li>Brokerage name and address</li>
-                <li>Years of experience and transaction history</li>
-                <li>Any additional details you submit</li>
+                <li>Any additional details you submit in form</li>
               </ul>
             </div>
             <div>
