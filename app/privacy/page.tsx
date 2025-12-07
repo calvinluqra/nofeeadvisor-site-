@@ -125,7 +125,7 @@ export default function PrivacyPolicy() {
         <section>
           <h2 className="text-2xl font-semibold mt-10 mb-4">7. Data Retention</h2>
           <ul className="list-disc pl-8 space-y-2">
-            <li>Contact form submissions: maximum 24 months</li>
+            <li>Contact form submissions: maximum 30 days</li>
             <li>Google Analytics data: up to 26 months (automatically anonymized/deleted)</li>
           </ul>
         </section>
