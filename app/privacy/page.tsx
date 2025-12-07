@@ -31,11 +31,19 @@ export default function PrivacyPolicy() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mt-10 mb-4">2. Personal Data We Collect</h2>
+          <h2 className="text-2xl font-semibold mt-10 mb-4">2. Data We Collect</h2>
+          <p>
+            We collect the following categories of personal data only when you voluntarily provide it through our contact/lead forms:
+          </p>
           <div className="space-y-6">
             <div>
-              <h3 className="font-semibold text-lg">A. Contact / Lead forms on our website</h3>
-              <ul className="list-disc pl-8 mt-2"><li>Name, email, phone, company, message, information in uploaded files</li></ul>
+<ul className="list-disc pl-8 mt-4 space-y-2">
+            <li>Name (first and last)</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Company name (if applicable)</li>
+            <li>Any additional information you choose to include in your message</li>
+          </ul>
             </div>
             <div>
               <h3 className="font-semibold text-lg">B. Agent Network Sign-up Form (Tally.so)</h3>
