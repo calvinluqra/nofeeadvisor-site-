@@ -58,6 +58,13 @@ export default function RootLayout({
         {/* SHARED FOOTER — now compact and beautiful */}
         <footer className="bg-gray-900 text-gray-400 py-10 text-center text-sm">
           <p className="mb-4">© 2025 No Fee Advisor • All rights reserved</p>
+          <p className="mt-4">
+    <a href="/privacy" className="text-gray-400 hover:text-white underline">
+      Privacy Policy
+    </a>
+    {" • "}
+    Statements encrypted & deleted after 30 days
+  </p>
 
           {/* AGENT / PROCESSOR CALL-TO-ACTION — tight spacing */}
           <div className="border-t border-gray-800 pt-6">
