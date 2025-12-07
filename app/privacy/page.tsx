@@ -92,10 +92,67 @@ export default function PrivacyPolicy() {
           </ul>
           <p className="mt-4">All transfers to the US are protected by Standard Contractual Clauses.</p>
         </section>
+<section>
+          <h2 className="text-2xl font-semibold mt-10 mb-4">6. International Data Transfers</h2>
+          <p>
+            Data may be transferred to and processed in the United States (Google Analytics). We use EU-approved Standard Contractual Clauses and supplementary measures where required.
+          </p>
+        </section>
 
-        {/* The rest of the sections (6–12) stay exactly the same as the previous version */}
-        <section><h2 className="text-2xl font-semibold mt-10 mb-4">6–12. [International Transfers, Retention, Rights, Security, Children, Changes, Contact]</h2>
-          <p>(Content identical to the previous version I sent you — just copy-paste those sections here to save space)</p>
+        <section>
+          <h2 className="text-2xl font-semibold mt-10 mb-4">7. Data Retention</h2>
+          <ul className="list-disc pl-8 space-y-2">
+            <li>Contact form submissions: maximum 24 months</li>
+            <li>Google Analytics data: up to 26 months (automatically anonymized/deleted)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mt-10 mb-4">8. Your Privacy Rights</h2>
+          <p>You may have the right to:</p>
+          <ul className="list-disc pl-8 mt-4 space-y-2">
+            <li>Access, correct, or delete your data</li>
+            <li>Object to or restrict processing</li>
+            <li>Data portability</li>
+            <li>Withdraw consent (where applicable)</li>
+            <li>Lodge a complaint with a supervisory authority</li>
+          </ul>
+          <p className="mt-4">
+            California residents: We do <strong>not</strong> “sell” or “share” personal information as defined by CCPA/CPRA. You may still submit access/deletion requests.
+          </p>
+          <p className="mt-4">
+            To exercise any right → email{" "}
+            <a href="mailto:privacy@nofeeadvisor.com" className="underline font-medium">
+              privacy@nofeeadvisor.com
+            </a>
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mt-10 mb-4">9. Security</h2>
+          <p>We implement appropriate technical and organizational measures (HTTPS, secure hosting, limited access) to protect your data.</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mt-10 mb-4">10. Children’s Privacy</h2>
+          <p>The Website is not directed to individuals under 16. We do not knowingly collect data from children under 16.</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mt-10 mb-4">11. Changes</h2>
+          <p>We may update this policy. Changes will be posted here with a new “Last updated” date.</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mt-10 mb-4">12. Contact Us</h2>
+          <p className="font-medium">
+            Email:{" "}
+            <a href="mailto:privacy@nofeeadvisor.com" className="underline">
+              privacy@nofeeadvisor.com
+            </a>
+            <br />
+            Website: <a href="https://www.nofeeadvisor.com" className="underline">www.nofeeadvisor.com</a>
+          </p>
         </section>
       </div>
     </div>
