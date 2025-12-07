@@ -54,6 +54,15 @@ export default function RootLayout({
         </header>
 
         <div className="min-h-screen">{children}</div>
+        <CookieConsent
+  buttonText="Accept"
+  cookieName="nofeeadvisor-consent"
+  style={{ background: "#000" }}
+  buttonStyle={{ color: "#fff", fontSize: "13px" }}
+  expires={150}
+>
+  This site uses cookies for analytics. <a href="/privacy">Learn more</a>.
+</CookieConsent>
 
         {/* SHARED FOOTER — now compact and beautiful */}
         <footer className="bg-gray-900 text-gray-400 py-10 text-center text-sm">
