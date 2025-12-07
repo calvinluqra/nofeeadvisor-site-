@@ -8,7 +8,7 @@ export const POST = async (req: NextRequest) => {
   try {
     const formData = await req.formData();
 
-    // TURNSTILE VERIFICATION
+    // TURNSTILE VERIFICATION — FINAL WORKING VERSION
     const token = formData.get("cf-turnstile-response") as string;
     if (!token) {
       return new Response("Missing security check", { status: 400 });
@@ -16,15 +16,16 @@ export const POST = async (req: NextRequest) => {
 
     const verify = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        secret: process.env.TURNSTILE_SECRET_KEY,
+        secret: process.env.CF_TURNSTILE_SECRET_KEY,
         response: token,
       }),
-      headers: { "Content-Type": "application/json" },
     });
 
     const result = await verify.json();
     if (!result.success) {
+      console.log("Turnstile failed:", result);
       return new Response("Security check failed", { status: 400 });
     }
 
