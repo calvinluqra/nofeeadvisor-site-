@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import CookieConsent from "react-cookie-consent";
 
 export const metadata: Metadata = {
   title: "No Fee Advisor – Stop Overpaying Credit Card Fees",
@@ -54,15 +55,6 @@ export default function RootLayout({
         </header>
 
         <div className="min-h-screen">{children}</div>
-        <CookieConsent
-  buttonText="Accept"
-  cookieName="nofeeadvisor-consent"
-  style={{ background: "#000" }}
-  buttonStyle={{ color: "#fff", fontSize: "13px" }}
-  expires={150}
->
-  This site uses cookies for analytics. <a href="/privacy">Learn more</a>.
-</CookieConsent>
 
         {/* SHARED FOOTER — now compact and beautiful */}
         <footer className="bg-gray-900 text-gray-400 py-10 text-center text-sm">
@@ -88,6 +80,23 @@ export default function RootLayout({
               </a>
             </p>
           </div>
+                  {/* COOKIE CONSENT BANNER — shows on every page */}
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          declineButtonText="Decline"
+          enableDeclineButton
+          cookieName="nofeeadvisor-consent"
+          style={{ background: "#111", color: "#fff" }}
+          buttonStyle={{ background: "#4f46e5", color: "#fff", fontSize: "14px" }}
+          expires={365}
+        >
+          This site uses cookies for analytics.{" "}
+          <a href="/privacy" className="underline hover:text-indigo-300">
+            Learn more
+          </a>
+          .
+        </CookieConsent>
         </footer>
       </body>
     </html>
