@@ -7,12 +7,12 @@ import Turnstile from "react-turnstile";
 export default function UploadForm() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
+  const [token, setToken] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!turnstileToken) {
+    if (!token) {
       setStatus("Please complete the security check");
       return;
     }
@@ -21,22 +21,27 @@ export default function UploadForm() {
     setStatus("Sending…");
 
     const formData = new FormData(e.currentTarget);
-    formData.append("cf-turnstile-response", turnstileToken);
+    formData.append("cf-turnstile-response", token);
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (res.ok) {
-      setStatus("Sent! Redirecting…");
-      (e.target as HTMLFormElement).reset();
-      setTurnstileToken("");
-      window.location.href = "/thanks";
-    } else {
+      if (res.ok) {
+        setStatus("Sent! Redirecting…");
+        (e.target as HTMLFormElement).reset();
+        setToken("");
+        window.location.href = "/thanks";
+      } else {
+        setStatus("Error — try again");
+      }
+    } catch (err) {
       setStatus("Error — try again");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -58,7 +63,6 @@ export default function UploadForm() {
         <p className="mt-2 text-xs text-gray-500">PDF, JPG, PNG — up to 25 MB total</p>
       </div>
 
-      {/* TRUST TEXT */}
       <div className="text-center space-y-2 text-sm text-gray-600">
         <p className="flex items-center justify-center gap-2">
           <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -69,19 +73,18 @@ export default function UploadForm() {
         <p>Zero spam • We only email you your custom bids • Unsubscribe any time</p>
       </div>
 
-      {/* TURNSTILE — INVISIBLE */}
       <div className="flex justify-center my-6">
         <Turnstile
-          sitekey="0x4AAAAAAA..." // ← your real site key here
-          onVerify={(token) => setTurnstileToken(token)}
-          onError={() => setStatus("Security check failed — try again")}
-          onExpire={() => setTurnstileToken("")}
+          sitekey="0x4AAAAAACFJ9Ypa9e5m-Qii"  // ← your real key
+          onVerify={(t) => setToken(t)}
+          onError={() => setStatus("Security check error")}
+          onExpire={() => setToken("")}
         />
       </div>
 
       <button
         type="submit"
-        disabled={loading || !turnstileToken}
+        disabled={loading || !token}
         className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold flex items-center justify-center gap-2 disabled:opacity-70"
       >
         {loading && <Loader2 className="animate-spin" />}
