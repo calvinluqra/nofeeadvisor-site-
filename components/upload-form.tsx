@@ -84,7 +84,7 @@ export default function UploadForm() {
       {/* TURNSTILE */}
       <div className="flex justify-center my-6">
         <Turnstile
-          sitekey="YOUR_SITE_KEY_HERE"
+          sitekey="0x4AAAAAACFJ9Ypa9e5m-Qii"
           onVerify={(t) => setToken(t)}
           onError={() => setStatus("Security check failed")}
           onExpire={() => setToken("")}
