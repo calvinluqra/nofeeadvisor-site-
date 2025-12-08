@@ -28,15 +28,14 @@ export default function UploadForm() {
       body: formData,
     });
 
-    if (res.ok) {
-      setStatus("✅ Sent! Check your email.");
-      (e.target as HTMLFormElement).reset();
-      setTurnstileToken(null);
-    } else {
-      setStatus("❌ Error — try again.");
-    }
-    setLoading(false);
-  };
+if (res.ok) {
+  setStatus("✅ Sent! Redirecting...");
+  (e.target as HTMLFormElement).reset();
+  // Redirect to /thanks after success
+  window.location.href = "/thanks";
+} else {
+  setStatus("❌ Error — try again.");
+};
 
   return (
     <form onSubmit={handleSubmit} className="space-y g-6">
