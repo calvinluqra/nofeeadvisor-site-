@@ -11,7 +11,6 @@ export default function UploadForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (!token) {
       setStatus("Please complete the security check");
       return;
@@ -23,25 +22,20 @@ export default function UploadForm() {
     const formData = new FormData(e.currentTarget);
     formData.append("cf-turnstile-response", token);
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: formData,
-      });
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: formData,
+    });
 
-      if (res.ok) {
-        setStatus("Sent! Redirecting…");
-        (e.target as HTMLFormElement).reset();
-        setToken("");
-        window.location.href = "/thanks";
-      } else {
-        setStatus("Error — try again");
-      }
-    } catch (err) {
+    if (res.ok) {
+      setStatus("Sent! Redirecting…");
+      (e.target as HTMLFormElement).reset();
+      setToken("");
+      window.location.href = "/thanks";
+    } else {
       setStatus("Error — try again");
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   return (
@@ -51,6 +45,7 @@ export default function UploadForm() {
       <input name="phone" placeholder="Phone (optional)" className="w-full px-4 py-3 border rounded-lg text-gray-900" />
       <textarea name="message" rows={4} placeholder="Message (optional)" className="w-full px-4 py-3 border rounded-lg text-gray-900" />
 
+      {/* FILE UPLOAD — SHOWS FILE NAME */}
       <div className="border-2 border-dashed border-gray-300 rounded-lg p-10 text-center">
         <input
           type="file"
@@ -58,26 +53,40 @@ export default function UploadForm() {
           multiple
           accept=".pdf,.jpg,.jpeg,.png"
           required
-          className="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700"
+          id="file-input"
+          className="block w-full text-sm file:mr-4 file:py-3 file:px-6 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer"
+          onChange={(e) => {
+            const input = e.target;
+            const label = document.getElementById("file-label");
+            if (input.files?.length) {
+              label!.textContent = input.files[0].name;
+            } else {
+              label!.textContent = "PDF, JPG, PNG — up to 25 MB total";
+            }
+          }}
         />
-        <p className="mt-2 text-xs text-gray-500">PDF, JPG, PNG — up to 25 MB total</p>
+        <label id="file-label" className="mt-3 block text-sm text-gray-500">
+          PDF, JPG, PNG — up to 25 MB total
+        </label>
       </div>
 
+      {/* TRUST TEXT */}
       <div className="text-center space-y-2 text-sm text-gray-600">
         <p className="flex items-center justify-center gap-2">
           <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd"/>
+            <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
           </svg>
           Your statements are encrypted and automatically deleted after 30 days
         </p>
         <p>Zero spam • We only email you your custom bids • Unsubscribe any time</p>
       </div>
 
+      {/* TURNSTILE */}
       <div className="flex justify-center my-6">
         <Turnstile
-          sitekey="0x4AAAAAACFJ9Ypa9e5m-Qii"  // ← your real key
+          sitekey="YOUR_SITE_KEY_HERE"
           onVerify={(t) => setToken(t)}
-          onError={() => setStatus("Security check error")}
+          onError={() => setStatus("Security check failed")}
           onExpire={() => setToken("")}
         />
       </div>
