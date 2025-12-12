@@ -22,9 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
+<head>
+  <title>Zero Credit Card Processing Fees | No Fee Advisor</title>
+  <meta name="description" content="Upload your merchant statement → get zero-fee bids in 24 hours. Most merchants save $8,400–$47,000/year. 100% free." />
+  <link rel="icon" href="/favicon.ico" />
+</head>
       <body className="antialiased bg-white text-gray-900">
         {/* SHARED HEADER */}
         <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
