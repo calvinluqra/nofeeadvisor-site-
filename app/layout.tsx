@@ -63,7 +63,9 @@ export default function RootLayout({
           <p className="text-xs text-gray-500 mt-2">
   <a href="/privacy" className="hover:underline">Privacy Policy</a> • 
   <a href="/terms" className="hover:underline ml-2">Terms of Service</a>
-            <br></br><span>Google Verified Business</span>
+             <p className="mt-3 text-gray-500">
+    Google Verified Business
+  </p>
 </p>
 
           {/* AGENT / PROCESSOR CALL-TO-ACTION — tight spacing */}
